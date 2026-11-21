@@ -440,6 +440,56 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 .brands2 .bt b{display:block;font-weight:700;font-size:15px;letter-spacing:.02em;color:var(--c);line-height:1.25}
 .brands2 .bt ul{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:2px}
 .brands2 .bt ul li{font-size:13.5px;color:#5e4f50;line-height:1.35}
+
+/* ===== v5: brighter, calmer, clearly divided (same sections) ===== */
+:root{color-scheme:light;--bg:#faf6f2;--band:#f2e9e2;--deep:#efe5dd;--ink:#2b1e22;--soft:#6c5c5e;--rose:#a24c5c;--line:#e6dad0}
+body{line-height:1.7}
+.band{padding:clamp(72px,9vw,128px) max(6vw,18px)}
+body>section:nth-of-type(odd){background:var(--bg)}
+body>section:nth-of-type(even){background:var(--band)}
+body>section{border-top:1px solid var(--line)}
+.wrap{max-width:1140px}
+h2{font-size:clamp(34px,4.4vw,54px)}
+.intro{font-size:18px;max-width:58ch}
+nav{background:color-mix(in srgb,var(--bg) 92%,transparent)}
+/* section labels read as clear dividers */
+.chap{margin-bottom:18px}
+.chap span{font-family:"DM Sans",sans-serif;font-style:normal;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--rose)}
+.chap::after{content:"";flex:1;height:1px;background:var(--line)}
+/* hero */
+.hero{background:var(--bg)!important;border-top:0!important;padding-bottom:clamp(64px,8vw,110px)}
+.badge{background:#fff}
+.portrait{box-shadow:0 30px 60px -40px rgba(43,30,34,.35)}
+/* less clutter */
+.strip,.lines{display:none!important}
+.proof{background:var(--line)}
+.proof div{background:var(--bg)}
+.toc{background:var(--line)}
+.toc a{background:var(--bg)}
+.toc a:hover,.toc a:focus-visible{background:#fff}
+/* cards: white on soft ground, more air */
+.camp,.sg,.arcg a,.hkb>div,.lp,.bp,.alts div,.mini>div,.result,.badge{background:#fff}
+.camps,.liveg,.arcg{gap:22px}
+.slw{column-gap:20px}
+.sg{margin-bottom:20px}
+.case{gap:clamp(36px,6vw,88px)}
+.media{gap:16px}
+/* posts: let the writing breathe */
+.lp .bd{padding:20px 20px 22px}
+.lp .ar{font-size:19px;line-height:1.75}
+.bp .cp{font-size:17px;line-height:1.75}
+/* readable text on dark overlays and accents */
+.bp .lk,.bp .ty,.lp .tg,.doct,.lp .nb{color:#fff}
+.chips button[aria-pressed=true],.arc .chips button.on{color:#fff}
+.hkb .cour{color:var(--ink)}
+.hkt span{color:#AC1929}
+.hkb .sw i{border-color:var(--line)}
+/* brand tiles on light */
+.brands2 li.bt{background:#fff;border:1px solid var(--line);border-top:4px solid var(--c)}
+/* long grids: show 8, then "Show all" */
+.clip>*:nth-child(n+9){display:none}
+.more{display:block;margin:28px auto 0;border:1px solid var(--line);background:#fff;color:var(--ink);border-radius:99px;padding:12px 22px;font:inherit;font-size:15px;cursor:pointer;min-height:44px}
+.more:hover{border-color:var(--rose);color:var(--rose)}
 </style>
 </head>
 <body>
@@ -465,10 +515,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
       <figcaption>Writer, strategist, director</figcaption>
     </figure>
   </div>
-  <div class="strip" aria-hidden="true"><div class="reel" id="reel"></div></div>
 </header>
 
-<section class="band brands2" id="brands">
+<section class="band brands2" id="brands" data-label="Brands">
   <div class="wrap">
     <p class="eyebrow">Brands I worked with</p>
     <div class="bw">
@@ -498,7 +547,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 </div>
 
 <!-- CHAPTER 1 -->
-<section class="band" id="ramadan">
+<section class="band" id="ramadan" data-label="Ramadan">
   <div class="wrap">
     <div class="chap"><span>Chapter one</span></div>
     <h2>Ramadan and sacred seasons</h2>
@@ -540,7 +589,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 </section>
 
 
-<section class="band dark" id="saudi">
+<section class="band dark" id="saudi" data-label="National days">
   <div class="wrap">
     <div class="chap"><span>Chapter one, continued</span></div>
     <h2>Saudi national days</h2>
@@ -551,7 +600,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 </section>
 
 <!-- CHAPTER 2 -->
-<section class="band dark" id="slogans">
+<section class="band dark" id="slogans" data-label="Slogans">
   <div class="wrap">
     <div class="chap"><span>Chapter two</span></div>
     <h2>Slogans people repeat</h2>
@@ -561,7 +610,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 </section>
 
 <!-- CHAPTER 3 -->
-<section class="band" id="concepts">
+<section class="band" id="concepts" data-label="Concepts">
   <div class="wrap">
     <div class="chap"><span>Chapter three</span></div>
     <h2>Creative concepts</h2>
@@ -700,10 +749,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<div class="lines" aria-label="Lines I have written"><div class="reel" id="lines"></div></div>
-
 <!-- CHAPTER 4 -->
-<section class="band" id="social">
+<section class="band" id="social" data-label="Social">
   <div class="wrap">
     <div class="chap"><span>Chapter four</span></div>
     <h2>Social content, by marketing appeal</h2>
@@ -729,7 +776,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 </section>
 
 
-<section class="band alt" id="doubletree">
+<section class="band alt" id="doubletree" data-label="DoubleTree">
   <div class="wrap dtw">
     <div class="ig">
       <div class="igh"><b>doubletreebyhiltonmangroovy</b><span>12K followers · El Gouna, Red Sea</span></div>
@@ -751,7 +798,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 </section>
 
 
-<section class="band alt" id="influencers">
+<section class="band alt" id="influencers" data-label="Influencers">
   <div class="wrap">
     <div class="inf">
       <div>
@@ -797,7 +844,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band" id="results">
+<section class="band" id="results" data-label="Results">
   <div class="wrap">
     <p class="kicker">Best-performing content · Accor Makkah, Madinah and Riyadh · 2026</p>
     <h2>The posts audiences chose</h2>
@@ -808,7 +855,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band dark live" id="live">
+<section class="band dark live" id="live" data-label="Published">
   <div class="wrap">
     <p class="kicker">Published work · live on Instagram</p>
     <h2>Concept, script, visuals and caption: mine, then live</h2>
@@ -823,7 +870,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 </section>
 
 <!-- CHAPTER 5 -->
-<section class="band dark" id="film">
+<section class="band dark" id="film" data-label="Film">
   <div class="wrap film">
     <img src="img/festival.jpg" alt="Yara on the red carpet at the Alexandria Short Film Festival">
     <div>
@@ -844,14 +891,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
     </div>
   </div>
   <div class="wrap falst"><img loading="lazy" src="img/fallacy-022.jpg" alt="Still from Fallacy"><img loading="lazy" src="img/fallacy-040.jpg" alt="Still from Fallacy"><img loading="lazy" src="img/fallacy-058.jpg" alt="Still from Fallacy"><img loading="lazy" src="img/fallacy-076.jpg" alt="Still from Fallacy"><img loading="lazy" src="img/fallacy-112.jpg" alt="Still from Fallacy"></div>
-  <div class="wrap">
-    <h3 style="margin-top:56px">Showreel</h3>
-    <div class="slots">
-      <div class="slot"><span>Video one</span></div>
-      <div class="slot"><span>Video two</span></div>
-      <div class="slot"><span>Video three</span></div>
-    </div>
-  </div>
   <div class="wrap case flip" style="margin-top:64px">
     <div class="media">
       <div class="docv"><video id="wpdoc" poster="img/wpdoc-poster.jpg" controls playsinline preload="none" data-src="doc2/playlist.txt"></video><span class="doct">The Palace Life Through Eras · global documentary · 10 min</span></div>
@@ -902,7 +941,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 </section>
 
 <!-- CHAPTER 6 -->
-<section class="band arc" id="archive">
+<section class="band arc" id="archive" data-label="Archive">
   <div class="wrap">
     <p class="kicker">Archive · 2021 to 2024</p>
     <h2>Where it started</h2>
@@ -912,7 +951,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band dark eng" id="english">
+<section class="band dark eng" id="english" data-label="English">
   <div class="wrap">
     <p class="kicker">English writing · one writer, many registers</p>
     <h2>I write English the way it’s read: <em>closely</em></h2>
@@ -925,7 +964,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band alt" id="writing">
+<section class="band alt" id="writing" data-label="Writing">
   <div class="wrap">
     <div class="chap"><span>Chapter six</span></div>
     <h2>Writing in every format</h2>
@@ -955,7 +994,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band">
+<section class="band" id="voice" data-label="Voice">
   <div class="wrap vo">
     <img src="img/studio.jpg" alt="Studio monitors during a presenting session">
     <div>
@@ -971,7 +1010,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band dark" id="mind">
+<section class="band dark" id="mind" data-label="Psychology">
   <div class="wrap psy">
     <div>
       <p class="kicker">The psychology behind the creative</p>
@@ -993,7 +1032,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band" id="approach">
+<section class="band" id="approach" data-label="Leadership">
   <div class="wrap lead">
     <div>
       <h2>How I run a creative team</h2>
@@ -1011,7 +1050,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band alt" id="experience">
+<section class="band alt" id="experience" data-label="Experience">
   <div class="wrap split">
     <div>
       <h2>Experience</h2>
@@ -1029,7 +1068,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
   </div>
 </section>
 
-<section class="band contact" id="contact">
+<section class="band contact" id="contact" data-label="Contact">
   <div class="wrap">
     <h2>Have a story that needs telling?</h2>
     <div class="links">
@@ -1047,7 +1086,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offse
 <script>
 {
 const frames=["ram-cover","mov-moments","wp-nile","oasis-tower","nv-woman","wp-dining","mov-light","kt-roots","pzm-lahza","oasis-view","merc-cover","hk-cover","nv-city"];
-document.getElementById("reel").innerHTML=[...frames,...frames].map(f=>`<img src="img/${f}.jpg" alt="">`).join("");
+(document.getElementById("reel")||{}).innerHTML=[...frames,...frames].map(f=>`<img src="img/${f}.jpg" alt="">`).join("");
 
 const C=[
  {h:"Sofitel Shahd Al Madinah · Rajab to Ramadan 1448",ar:"نورُها يسكُن الفؤاد",en:"Madinah’s light dwells in the heart",p:"Light grows the way the crescent grows: a thin line of longing in Rajab, a widening glow in Sha’ban, full light in Ramadan. «يسكُن» means both to dwell and to grow still.",li:[["حين يبدأ النداء","When the call begins"],["ويدنو اللقاء","When the meeting draws near"],["فيكتمل الضياء","When the light is complete"]]},
@@ -1104,7 +1143,7 @@ document.getElementById("slw").innerHTML=S.map(s=>`<div class="sg${s[4]?' big':'
 
 const lines=[["Light in every step",0],["نور في كل خطوة",1],["Your Oasis… Your Rhythm.",0],["خَيْرُ اللِّقاء",1],["Moments that stay",0],["بقلبنا لَبَّيْنَا",1],["Every corner tells a story",0],["نورُها يسكُن الفؤاد",1],["And we’re rolling!",0],["كسبناها!",1]];
 const L=lines.map(l=>`<span${l[1]?' class="ar"':''}>${l[0]}</span><i>✦</i>`).join("");
-document.getElementById("lines").innerHTML=L+L;
+(document.getElementById("lines")||{}).innerHTML=L+L;
 
 const V=[
  ["Spiritual","emo","Sofitel Shahd Al Madinah","The call to prayer from Al-Masjid Al-Nabawi, the hush before Iftar, the taste of dates breaking your fast, it’s a Ramadan story that never fades.","صوت الأذان من المسجد النبوي الشريف، مع لحظات السكون قبل الإفطار، ولذة التمر بعد الصيام.. هذه حكاية رمضانية تبقى في الذاكرة.","Ramadan post"],
@@ -1197,5 +1236,6 @@ document.getElementById("time").innerHTML=time.map(t=>`<li><span class="yr">${t[
 </script>
 <script src="doc2/hls.light.min.js"></script>
 <script>{const v=document.getElementById("wpdoc");if(v){const src=v.dataset.src;let ready=false;const go=()=>{if(ready)return;ready=true;if(window.Hls&&Hls.isSupported()){const h=new Hls();h.loadSource(src);h.attachMedia(v)}else{v.src=src}};v.addEventListener("play",()=>{if(!v.currentSrc){go();setTimeout(()=>v.play().catch(()=>{}),300)}},{once:false});v.addEventListener("click",go,{once:true});const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){go();io.disconnect()}},{rootMargin:"400px"});io.observe(v)}}</script>
+<script>{const add=(id,n)=>{const g=document.getElementById(id);if(!g||g.children.length<=n)return;g.classList.add('clip');const b=document.createElement('button');b.className='more';b.type='button';b.textContent='Show all '+g.children.length;b.onclick=()=>{g.classList.remove('clip');b.remove()};g.after(b);if(id==='arcg')document.querySelectorAll('#archive .chips button').forEach(c=>c.addEventListener('click',()=>{g.classList.remove('clip');b.remove()}))};setTimeout(()=>{add('bestg',8);add('arcg',8)},0)}</script>
 </body>
 </html>
