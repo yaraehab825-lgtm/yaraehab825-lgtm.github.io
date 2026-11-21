@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Yara AbuZaid Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Noto+Naskh+Arabic:wght@500;700&display=swap" rel="stylesheet">
+<style>
+
+/* VOICE occasion: a creative lead's showreel, confident and a little dark-romantic
+   IDEA a director's reel: every project is a scene on film, with a slate card of who, what, how
+   PICTURE her black-and-white portrait beside the headline, then a running filmstrip of real frames from her work
+   COLOUR oxblood night ground, bone ink, one dusty-rose accent for proof and actions
+   TYPE Instrument Serif for titles and quotes, DM Sans for reading, Noto Naskh Arabic for Arabic
+   LAYOUT headline left and portrait right, filmstrip full-bleed; cases alternate; voices as a wall of bilingual cards; stack under 860px */
+:root{color-scheme:dark;--bg:#170a0d;--band:#210f14;--deep:#0f0608;--ink:#f1e8de;--soft:#c9b9ad;--rose:#e9a0a8;--line:#3b1d24}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth;scroll-padding-top:72px}
+body{margin:0;background:var(--bg);color:var(--ink);font:16.5px/1.6 "DM Sans",system-ui,sans-serif;overflow-x:clip}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:"Instrument Serif",Georgia,serif;font-weight:400;letter-spacing:-.01em;line-height:1.05;margin:0;text-wrap:balance}
+h2{font-size:clamp(36px,5vw,56px)}
+h3{font-size:clamp(26px,3vw,34px)}
+p{margin:0 0 1em;max-width:62ch}
+.ar{font-family:"Noto Naskh Arabic",serif;direction:rtl;unicode-bidi:isolate}
+.wrap{max-width:1240px;margin:0 auto}
+.band{padding:clamp(48px,7vw,104px) max(5vw,16px)}
+.soft{color:var(--soft)}
+.intro{color:var(--soft);margin-top:14px;max-width:64ch}
+nav{position:sticky;top:0;z-index:5;display:flex;flex-wrap:wrap;gap:8px 24px;align-items:center;justify-content:space-between;padding:14px max(5vw,16px);background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav b{font-family:"Instrument Serif",serif;font-weight:400;font-size:22px}
+nav div{display:flex;flex-wrap:wrap;gap:4px 20px}
+nav a{text-decoration:none;color:var(--soft);font-size:15px;padding:6px 0}
+nav a:hover,nav a:focus-visible{color:var(--ink)}
+.hero{padding-bottom:0}
+.top{display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:clamp(28px,4vw,64px);align-items:stretch}
+.who{color:var(--rose);font-size:16px;margin-bottom:18px}
+.hook{font-size:clamp(46px,6.6vw,92px);line-height:.98;letter-spacing:-.025em}
+.hook em{font-style:italic;color:var(--rose)}
+.lede{font-size:clamp(18px,1.7vw,20px);margin-top:26px;max-width:44ch}
+.heroL{display:flex;flex-direction:column;justify-content:center}
+.badge{display:grid;grid-template-columns:96px minmax(0,1fr);gap:16px;align-items:center;background:var(--band);border:1px solid var(--line);border-radius:14px;padding:12px;margin-top:30px;max-width:520px}
+.badge img{border-radius:8px;aspect-ratio:4/5;object-fit:cover;object-position:30% 50%}
+.badge strong{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:24px;line-height:1.1}
+.badge span{color:var(--soft);font-size:14px}
+.portrait{position:relative;border-radius:16px;overflow:hidden;min-height:420px;background:#2a2a2a}
+.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.portrait figcaption{position:absolute;left:16px;bottom:14px;font-size:14px;color:#eee;background:rgba(0,0,0,.45);padding:4px 10px;border-radius:999px}
+.strip{margin-top:clamp(40px,6vw,72px);background:#090304;padding:22px 0;overflow:hidden;position:relative}
+.strip::before,.strip::after{content:"";position:absolute;left:0;right:0;height:12px;background:repeating-linear-gradient(90deg,transparent 0 14px,#2b1418 14px 30px)}
+.strip::before{top:5px}.strip::after{bottom:5px}
+.reel{display:flex;gap:12px;width:max-content;animation:run 80s linear infinite}
+.reel img{height:clamp(140px,20vw,240px);width:auto;border-radius:4px}
+@keyframes run{to{transform:translateX(-50%)}}
+.lines{overflow:hidden;border-block:1px solid var(--line);padding:22px 0;background:var(--deep)}
+.lines .reel{animation-duration:90s;animation-direction:reverse;gap:44px;align-items:center}
+.lines span{font-family:"Instrument Serif",serif;font-size:clamp(26px,3vw,38px);white-space:nowrap}
+.lines span.ar{font-family:"Noto Naskh Arabic",serif;font-size:clamp(22px,2.6vw,32px);color:var(--rose)}
+.lines i{color:var(--line);font-style:normal;font-size:28px}
+@media(prefers-reduced-motion:reduce){.reel{animation:none}html{scroll-behavior:auto}}
+.proof{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(170px,45%),1fr));gap:1px;background:var(--line);border-bottom:1px solid var(--line)}
+.proof div{background:var(--bg);padding:26px max(2vw,16px)}
+.proof b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(32px,3.6vw,46px);line-height:1;color:var(--rose)}
+.proof span{color:var(--soft);font-size:15px}
+.psy{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.psy blockquote{margin:0;font-family:"Instrument Serif",serif;font-size:clamp(34px,4.4vw,58px);line-height:1.05;letter-spacing:-.015em}
+.psy blockquote em{color:var(--rose)}
+.pts{display:grid;gap:0;margin-top:8px}
+.pts div{padding:16px 0;border-bottom:1px solid var(--line)}
+.pts b{font-weight:500;display:block}
+.pts span{color:var(--soft);font-size:15.5px}
+.creds{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:36px}
+.creds div{background:var(--band);border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.creds b{font-weight:500;display:block}
+.creds span{color:var(--soft);font-size:14.5px}
+.case{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.case.flip{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+.case.flip .media{order:2}
+.case>div:not(.media){position:sticky;top:96px}
+.kicker{color:var(--rose);font-size:15px;margin-bottom:12px}
+.case h2{margin-bottom:20px}
+.slate{display:grid;grid-template-columns:auto minmax(0,1fr);gap:6px 18px;margin:24px 0;padding:18px 0;border-block:1px solid var(--line);font-size:15px}
+.slate dt{color:var(--soft)}
+.slate dd{margin:0}
+.media{display:grid;gap:12px}
+.media img{border-radius:10px;width:100%;object-fit:cover}
+.duo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px}
+.trio{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.trio img{aspect-ratio:1;height:100%}
+.duo.tall img{aspect-ratio:4/5;object-position:50% 40%}
+.quote{font-family:"Instrument Serif",serif;font-size:clamp(24px,2.6vw,30px);line-height:1.2;margin:8px 0 22px;max-width:30ch}
+.quote .ar{display:block;font-size:.9em;margin-bottom:6px}
+.result{background:var(--band);border-radius:12px;padding:18px 20px;border:1px solid var(--line)}
+.result b{color:var(--rose);font-weight:500}
+.dark{background:var(--deep)}
+.alt{background:var(--band)}
+.cap{font-size:14px;color:var(--soft);margin:-2px 0 0}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:26px}
+.chips button{font:inherit;font-size:15px;color:var(--soft);background:transparent;border:1px solid var(--line);border-radius:999px;padding:9px 16px;min-height:44px;cursor:pointer}
+.chips button[aria-pressed=true]{background:var(--rose);border-color:var(--rose);color:#2a0c12}
+.chips button:hover{border-color:var(--rose)}
+.voices{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(340px,100%),1fr));gap:14px;margin-top:22px}
+.v{background:var(--band);border:1px solid var(--line);border-radius:14px;padding:22px;display:flex;flex-direction:column;gap:12px}
+.v[hidden]{display:none}
+.v .t{display:flex;justify-content:space-between;gap:12px;font-size:14px;color:var(--soft)}
+.v .t b{color:var(--rose);font-weight:500}
+.v .en{font-family:"Instrument Serif",serif;font-size:23px;line-height:1.22}
+.v .arx{font-size:19px;line-height:1.7;color:var(--ink);border-top:1px solid var(--line);padding-top:12px}
+.v small{color:var(--soft);font-size:13.5px;margin-top:auto}
+.shot{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:32px;align-items:start}
+.phone{background:#000;border-radius:22px;padding:8px;border:1px solid var(--line)}
+.phone video,.phone img{border-radius:16px;width:100%;aspect-ratio:9/16;object-fit:cover}
+.phone figcaption{font-size:14px;color:var(--soft);padding:10px 6px 4px}
+.shot .script{grid-column:1/-1}
+.script{background:var(--band);border:1px solid var(--line);border-radius:14px;padding:22px}
+.script h3{font-size:26px;margin-bottom:6px}
+.script ol{list-style:none;padding:0;margin:16px 0 0}
+.script li{display:grid;grid-template-columns:5.2em minmax(0,1fr);gap:12px;padding:10px 0;border-top:1px solid var(--line);font-size:15px}
+.script li span{color:var(--rose);white-space:nowrap}
+.script li i{display:block;color:var(--soft);font-style:normal;font-size:14px}
+.onset{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px;margin-top:14px}
+.onset img{border-radius:12px;width:100%;height:100%;object-fit:cover}
+.vo{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:clamp(28px,5vw,72px);align-items:center}
+.vo img{border-radius:14px;width:100%;max-width:400px;aspect-ratio:16/10;object-fit:cover;justify-self:center}
+.list{list-style:none;padding:0;margin:20px 0 0}
+.list li{padding:12px 0;border-bottom:1px solid var(--line)}
+.list b{font-weight:500}
+.list span{display:block;color:var(--soft);font-size:15px}
+.reads{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:30px}
+.reads div{border-top:2px solid var(--rose);padding-top:14px}
+.reads b{font-family:"Instrument Serif",serif;font-weight:400;font-size:24px;line-height:1.15;display:block;margin-bottom:6px}
+.reads span{font-size:15px;color:var(--soft)}
+.wall{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px;margin-top:32px}
+.tile{background:var(--band);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0}
+.tile img{aspect-ratio:16/10;object-fit:cover;width:100%}
+.tile div{padding:14px 16px 18px}
+.tile b{display:block;font-weight:500}
+.tile span{font-size:14px;color:var(--soft)}
+.names{display:flex;flex-wrap:wrap;gap:10px;margin-top:28px}
+.names span{border:1px solid var(--line);border-radius:999px;padding:7px 14px;font-size:14.5px;color:var(--soft)}
+.lead{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:28px}
+.steps div{border-top:2px solid var(--rose);padding-top:16px}
+.steps b{font-family:"Instrument Serif",serif;font-weight:400;font-size:26px;display:block;margin-bottom:6px}
+.steps p{font-size:15.5px;color:var(--soft)}
+.promo{border-radius:14px;overflow:hidden}
+.split{display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:start}
+.time{list-style:none;padding:0;margin:24px 0 0}
+.time li{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.time .yr{color:var(--rose);white-space:nowrap;font-size:15px}
+.time b{font-weight:500}
+.time span{display:block;color:var(--soft);font-size:15px}
+.edu p{margin-bottom:14px}
+.contact h2{font-size:clamp(44px,7vw,92px);max-width:14ch}
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:36px}
+.links a,.links div{display:block;text-decoration:none;background:var(--band);border:1px solid var(--line);border-radius:12px;padding:16px 18px;min-height:44px}
+.links a:hover,.links a:focus-visible{border-color:var(--rose)}
+.links small{display:block;color:var(--soft);font-size:13.5px}
+.links span{overflow-wrap:anywhere}
+footer{padding:28px max(5vw,16px);color:var(--soft);font-size:14px;border-top:1px solid var(--line)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--rose);outline-offset:3px}
+@media(max-width:700px){.shot{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:860px){.top,.case,.case.flip,.split,.psy,.vo,.lead{grid-template-columns:minmax(0,1fr)}.case.flip .media{order:0}.case>div:not(.media){position:static}.portrait{min-height:0;aspect-ratio:4/5;max-height:560px}}
+@media(max-width:760px){.reads{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:520px){.reads{grid-template-columns:minmax(0,1fr)}.badge{grid-template-columns:80px minmax(0,1fr)}.trio{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.trio img:last-child{display:none}.time li{grid-template-columns:minmax(0,1fr);gap:2px}nav div{gap:2px 14px}.onset{grid-template-columns:minmax(0,1fr)}}
+
+.chap{display:flex;align-items:baseline;gap:18px;margin-bottom:10px}
+.chap span{font-family:"Instrument Serif",serif;font-style:italic;color:var(--rose);font-size:22px;white-space:nowrap}
+.toc{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(220px,100%),1fr));gap:1px;background:var(--line);border-block:1px solid var(--line)}
+.toc a{display:block;background:var(--bg);padding:22px max(2vw,16px);text-decoration:none;min-height:44px}
+.toc a:hover,.toc a:focus-visible{background:var(--band)}
+.toc i{display:block;font-style:italic;font-family:"Instrument Serif",serif;color:var(--rose);font-size:18px}
+.toc b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:26px;line-height:1.1}
+.toc small{color:var(--soft);font-size:14px}
+.camps{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(360px,100%),1fr));gap:14px;margin-top:30px}
+.camp{background:var(--band);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.camp .pics{display:grid;grid-auto-flow:column;grid-auto-columns:1fr;gap:2px;background:var(--deep)}
+.camp .pics img{width:100%;height:220px;object-fit:cover}
+.camp .bd{padding:20px 22px 22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.camp .who2{font-size:14px;color:var(--soft)}
+.camp .sl{font-family:"Noto Naskh Arabic",serif;direction:rtl;font-size:28px;line-height:1.5;color:var(--rose)}
+.camp .en{font-family:"Instrument Serif",serif;font-size:24px;line-height:1.15}
+.camp p{font-size:15.5px;color:var(--soft);margin:0}
+.camp ul{margin:0;padding:0;list-style:none;font-size:15px;display:grid;gap:4px}
+.camp li .ar{color:var(--ink)}
+.alts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(230px,100%),1fr));gap:12px;margin-top:22px}
+.alts div{border:1px dashed var(--line);border-radius:12px;padding:14px 16px}
+.alts .ar{display:block;font-size:20px;line-height:1.6}
+.alts span{font-size:14.5px;color:var(--soft)}
+.alts b{font-weight:500;color:var(--rose);font-size:13.5px;display:block;margin-bottom:4px}
+.slw{columns:3 300px;column-gap:14px;margin-top:30px}
+.sg{break-inside:avoid;margin:0 0 14px;background:var(--band);border:1px solid var(--line);border-radius:14px;padding:20px 22px}
+.sg .ar{display:block;font-size:26px;line-height:1.55}
+.sg .en{display:block;font-family:"Instrument Serif",serif;font-size:27px;line-height:1.12}
+.sg .es{display:block;font-family:"Instrument Serif",serif;font-style:italic;font-size:25px;line-height:1.15;color:var(--rose)}
+.sg small{display:block;color:var(--soft);font-size:13.5px;margin-top:10px}
+.sg.big .en,.sg.big .ar{color:var(--rose)}
+.strip3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;margin-top:26px}
+.strip3 img{border-radius:10px;width:100%;aspect-ratio:9/16;object-fit:cover}
+.mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(260px,100%),1fr));gap:14px;margin-top:30px}
+.mini div{background:var(--band);border:1px solid var(--line);border-radius:14px;padding:20px}
+.mini b{font-family:"Instrument Serif",serif;font-weight:400;font-size:24px;display:block;line-height:1.15;margin-bottom:6px}
+.mini span{color:var(--soft);font-size:15px}
+.mini .q{display:block;font-family:"Instrument Serif",serif;color:var(--rose);font-size:19px;margin-top:8px}
+.lbg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.lbg figure{margin:0;background:var(--band);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.lbg img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.lbg figcaption{padding:12px 14px 14px}
+.lbg b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:22px;line-height:1.15}
+.lbg span{font-size:14px;color:var(--soft)}
+@media(max-width:860px){.lbg{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:520px){.lbg{grid-template-columns:minmax(0,1fr)}}
+.dtw{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.ig{background:#000;border-radius:28px;padding:16px 10px 10px;border:1px solid var(--line);max-width:460px;width:100%;justify-self:center}
+.igh{padding:4px 10px 14px}.igh b{display:block;font-weight:500;color:#fff}.igh span{font-size:13.5px;color:#aaa}
+.igg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
+.igg img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.dtc{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:40px}
+.dp{background:var(--bg);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin:0;display:flex;flex-direction:column}
+.dp img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.dp figcaption{padding:14px 16px 16px;display:grid;gap:6px}
+.dp b{font-family:"Instrument Serif",serif;font-weight:400;font-size:21px;line-height:1.15}
+.dp span{font-size:14.5px;color:var(--soft)}
+.dp small{font-size:12.5px;color:var(--rose)}
+@media(max-width:980px){.dtc{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:860px){.dtw{grid-template-columns:minmax(0,1fr)}}
+.slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:20px;max-width:900px}
+.slot{aspect-ratio:4/5;border:1.5px dashed color-mix(in srgb,var(--rose) 55%,transparent);border-radius:14px;display:flex;align-items:center;justify-content:center;background:repeating-linear-gradient(135deg,transparent 0 14px,color-mix(in srgb,var(--rose) 6%,transparent) 14px 28px)}
+.slot.wide{aspect-ratio:16/9}
+.slot span{font-family:"Instrument Serif",serif;font-size:22px;color:var(--soft);text-align:center;padding:0 16px}
+.slot span::before{content:"▶";display:block;font-size:30px;color:var(--rose);margin-bottom:8px}
+@media(max-width:600px){.slots{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.slots .slot:last-child{grid-column:1/-1;aspect-ratio:16/9}}
+.years{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:32px}
+.yr4{background:var(--band);border:1px solid var(--line);border-radius:14px;padding:20px;display:flex;flex-direction:column;gap:12px}
+.yr4 .y{font-family:"Instrument Serif",serif;font-size:44px;line-height:1;color:var(--rose)}
+.yr4 .h{font-size:14px;color:var(--soft)}
+.yr4 .ar{font-size:21px;line-height:1.6}
+.yr4 .en{font-family:"Instrument Serif",serif;font-size:21px;line-height:1.2}
+.yr4 p{margin:0;font-size:15px;color:var(--soft)}
+.yr4 hr{border:0;border-top:1px solid var(--line);margin:4px 0;width:100%}
+.yr4.pend{border-style:dashed;justify-content:flex-start}
+.song{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:48px}
+.song .phone video{aspect-ratio:824/1076;border-radius:16px;width:100%;object-fit:cover;background:#000}
+@media(max-width:980px){.years{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.years{grid-template-columns:minmax(0,1fr)}.song{grid-template-columns:minmax(0,1fr)}}
+.sny{display:grid;gap:56px;margin-top:40px}
+.syr{display:grid;grid-template-columns:150px minmax(0,1fr);gap:28px;border-top:1px solid var(--line);padding-top:26px}
+.syr>.y{font-family:"Instrument Serif",serif;font-size:64px;line-height:.9;color:var(--rose)}
+.syr>.y small{display:block;font-family:"DM Sans",sans-serif;font-size:14px;color:var(--soft);margin-top:10px;line-height:1.4}
+.sgrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.sp{margin:0;background:var(--band);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.sp img{width:100%;aspect-ratio:4/5;object-fit:cover}
+.sp.sq img{aspect-ratio:1}
+.sp figcaption{padding:14px 16px 16px;display:grid;gap:8px}
+.sp small{color:var(--rose);font-size:12.5px}
+.sp .ar{font-size:17px;line-height:1.7}
+.sp .en{font-size:14.5px;color:var(--soft)}
+.sp.txt{justify-content:center}
+.sp.txt figcaption{padding:22px}
+@media(max-width:860px){.syr{grid-template-columns:minmax(0,1fr);gap:14px}.sgrid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+@media(max-width:520px){.sgrid{grid-template-columns:minmax(0,1fr)}}
+.tdc{display:grid;grid-template-columns:minmax(0,420px) minmax(0,1fr);gap:clamp(24px,4vw,56px);align-items:center;margin-top:48px}
+.crs{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;border-radius:14px;scrollbar-width:none;border:1px solid var(--line)}
+.crs::-webkit-scrollbar{display:none}
+.crs img{flex:0 0 100%;width:100%;aspect-ratio:4/5;object-fit:cover;scroll-snap-align:start}
+.crb{display:flex;align-items:center;gap:14px}
+.crb button{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:var(--band);color:var(--ink);font-size:22px;cursor:pointer}
+.crb button:hover{border-color:var(--rose)}
+.crb span{color:var(--soft);font-size:15px}
+.lflow{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:26px}
+.lflow div{border-top:2px solid var(--rose);padding-top:14px}
+.lflow b{font-family:"Instrument Serif",serif;font-weight:400;font-size:22px;display:block;margin-bottom:6px}
+.lflow span{font-size:15px;color:var(--soft)}
+@media(max-width:860px){.tdc{grid-template-columns:minmax(0,1fr)}.lflow{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.film{display:grid;grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,64px);align-items:center}
+.film img{border-radius:14px;width:100%;max-height:640px;object-fit:cover;object-position:50% 20%}
+.sb{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:28px}
+.sb figure{margin:0}
+.sb img{border-radius:8px;width:100%;aspect-ratio:3/2;object-fit:cover}
+.sb figcaption{font-size:13.5px;color:var(--soft);margin-top:6px}
+.plan{background:var(--band);border:1px solid var(--line);border-radius:14px;padding:22px}
+.plan table{width:100%;border-collapse:collapse;font-size:15px;margin-top:12px}
+.plan td{padding:10px 8px;border-top:1px solid var(--line);vertical-align:top}
+.plan td:first-child{color:var(--rose);white-space:nowrap;width:8.5em}
+.shoots{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.5fr);gap:14px;margin-top:14px;align-items:start}
+.shoots img{border-radius:14px;width:100%;aspect-ratio:4/5;object-fit:cover}
+@media(max-width:860px){.film,.shoots{grid-template-columns:minmax(0,1fr)}.strip3{grid-template-columns:repeat(3,minmax(0,1fr))}.sb{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.bestg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(210px,100%),1fr));gap:16px;margin-top:36px}
+.bp{background:var(--band);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;color:inherit;text-decoration:none;transition:transform .25s}
+.bp:hover{transform:translateY(-4px)}
+.bp .im{position:relative;aspect-ratio:4/5;background:var(--deep)}
+.bp .im img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.bp .lk{position:absolute;left:10px;bottom:10px;background:rgba(20,6,10,.78);backdrop-filter:blur(4px);border-radius:99px;padding:4px 11px;font-size:13px;font-weight:600}
+.bp .ty{position:absolute;right:10px;top:10px;background:rgba(20,6,10,.7);border-radius:99px;padding:3px 9px;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.bp .bd{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px}
+.bp .ac{font-size:13px;color:var(--rose)}
+.bp .cp{font-family:"Noto Naskh Arabic",serif;direction:rtl;text-align:right;font-size:16px;line-height:1.6;margin:0}
+.bp .dt{font-size:12px;color:var(--soft)}
+.bestk{display:flex;flex-wrap:wrap;gap:10px 26px;margin-top:22px;font-size:14px;color:var(--soft)}
+.bestk b{color:var(--ink);font-size:22px;font-family:"Instrument Serif",serif;font-weight:400;margin-right:6px}
+.inf{display:grid;grid-template-columns:1.05fr 1fr;gap:56px;align-items:start}
+.bw{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.bw span{border:1px solid var(--line);border-radius:12px;padding:20px 12px;text-align:center;font-family:"Instrument Serif",serif;font-size:21px;line-height:1.15;background:var(--band)}
+.bw span.hi{border-color:var(--rose);color:var(--rose)}
+.bw small{display:block;font-family:inherit;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--soft);margin-top:6px;font-family:"DM Sans",system-ui,sans-serif}
+.roles{display:grid;gap:12px;margin:22px 0 0;padding:0;list-style:none}
+.roles li{border-left:2px solid var(--rose);padding-left:14px}
+.roles b{display:block}
+.roles span{color:var(--soft);font-size:15px}
+.uae{margin-top:56px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;border:1px solid var(--line);border-radius:16px;padding:26px 30px;background:var(--band)}
+.uae .yr{font-family:"Instrument Serif",serif;font-size:64px;line-height:1;color:var(--rose)}
+@media(max-width:900px){.inf{grid-template-columns:1fr}.bw{grid-template-columns:repeat(2,minmax(0,1fr))}.uae{grid-template-columns:1fr}}
+.iramv{margin:0;display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:24px;align-items:end}
+.iramv .phone{border-radius:28px;overflow:hidden;border:6px solid #2a1218;box-shadow:0 30px 60px -20px rgba(0,0,0,.7);aspect-ratio:9/16;background:#000}
+.iramv video{width:100%;height:100%;object-fit:cover;display:block}
+.iramv figcaption{display:flex;flex-direction:column;gap:8px}
+.iramv figcaption b{font-family:"Instrument Serif",serif;font-weight:400;font-size:26px;color:var(--rose)}
+.iramv figcaption span{color:var(--soft);font-size:15.5px}
+.exec{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;margin:48px 0 14px}
+.exec span{border-top:1px solid var(--rose);padding-top:10px;font-size:14px;color:var(--soft)}
+.exec b{display:block;font-family:"Instrument Serif",serif;font-weight:400;font-size:28px;color:var(--ink)}
+.bw6{grid-template-columns:repeat(6,minmax(0,1fr))}
+@media(max-width:900px){.iramv{grid-template-columns:1fr;max-width:320px}.exec{grid-template-columns:repeat(2,minmax(0,1fr))}.bw6{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.live h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:30px;margin:48px 0 4px}
+.liveg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(280px,100%),1fr));gap:18px;margin-top:18px}
+.lp{background:var(--band);border:1px solid var(--line);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.lp .mv{position:relative;background:#000;aspect-ratio:4/5;overflow:hidden}
+.lp .mv.tall{aspect-ratio:9/16}
+.lp .trk{display:flex;height:100%;transition:transform .35s ease}
+.lp .trk>*{flex:0 0 100%;width:100%;height:100%;object-fit:cover;display:block}
+.lp .nb{position:absolute;top:50%;transform:translateY(-50%);width:36px;height:36px;border-radius:50%;border:0;background:rgba(20,6,10,.7);color:#fff;font-size:18px;cursor:pointer}
+.lp .nb.p{left:8px}.lp .nb.n{right:8px}
+.lp .dots{position:absolute;bottom:10px;left:0;right:0;display:flex;gap:5px;justify-content:center}
+.lp .dots i{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45)}.lp .dots i.on{background:#fff}
+.lp .tg{position:absolute;top:10px;left:10px;background:rgba(20,6,10,.78);border-radius:99px;padding:4px 10px;font-size:12px;z-index:2}
+.lp .bd{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px}
+.lp .ac{font-size:13px;color:var(--rose)}
+.lp .ar{font-family:"Noto Naskh Arabic",serif;direction:rtl;text-align:right;font-size:18px;line-height:1.6;margin:0}
+.lp .en{font-family:"Instrument Serif",serif;font-size:21px;line-height:1.2;margin:0}
+.lp .nt{font-size:14.5px;color:var(--soft);margin:0}
+.lp a.lk{font-size:13px;margin-top:4px}
+.fal{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center;margin-top:64px}
+.falv{border-radius:16px;overflow:hidden;aspect-ratio:16/9;background:#000;box-shadow:0 30px 60px -25px rgba(0,0,0,.8)}
+.falv video{width:100%;height:100%;object-fit:cover;display:block}
+.falst{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px;margin-top:14px}
+.falst img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:8px}
+@media(max-width:900px){.fal{grid-template-columns:1fr}.falst{grid-template-columns:repeat(3,minmax(0,1fr))}}
+.med h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:clamp(28px,3.4vw,40px);margin:6px 0 12px;line-height:1.1}
+.med h4{font-family:"Instrument Serif",serif;font-weight:400;font-size:26px;margin:40px 0 14px}
+.medh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(24px,4vw,48px);align-items:center;margin-top:48px}
+.medh img{width:100%;border-radius:14px}
+.medh p{color:var(--soft)}.medh p b{color:var(--ink)}
+.kcon{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:28px}
+.kcon article{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;background:var(--band);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.kcon img{width:100%;height:100%;object-fit:cover;min-height:220px}
+.kcon div{padding:16px 16px 16px 0;display:flex;flex-direction:column;gap:5px}
+.kcon .n{font-size:12px;color:var(--rose);letter-spacing:.04em}
+.kcon b{font-family:"Instrument Serif",serif;font-weight:400;font-size:24px;line-height:1.1}
+.kcon em{color:var(--rose);font-style:italic}
+.kcon small{color:var(--soft);font-size:12.5px}
+.kcon p{font-size:14.5px;color:var(--soft);margin:4px 0 0}.kcon p strong{color:var(--ink)}
+.acts{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(210px,100%),1fr));gap:12px}
+.acts div{border-top:2px solid var(--rose);padding-top:12px}
+.acts b{display:block;margin-bottom:4px}.acts span{font-size:14.5px;color:var(--soft)}
+.actv{display:grid;grid-template-columns:1.1fr 1.4fr .8fr;gap:10px;margin-top:18px}
+.actv img{width:100%;height:280px;object-fit:cover;border-radius:12px}
+.scr{margin:22px 0 0;border-left:2px solid var(--rose);padding:6px 0 6px 18px;font-family:"Instrument Serif",serif;font-size:21px;line-height:1.35}
+.scr span{display:block;font-family:inherit;font-size:12px;color:var(--soft);letter-spacing:.06em;margin-bottom:6px;font-family:"DM Sans",system-ui,sans-serif}
+.nflow{display:flex;flex-wrap:wrap;gap:8px 10px;align-items:center;margin-top:26px;font-size:14px}
+.nflow span{border:1px solid var(--line);border-radius:99px;padding:6px 12px;background:var(--band)}.nflow i{color:var(--rose);font-style:normal}
+.npil{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:14px}
+.npil span{background:var(--band);border:1px solid var(--line);border-radius:10px;padding:10px;font-size:13px;color:var(--soft)}
+.npil b{display:block;color:var(--rose);font-size:15px}
+.nmon{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:18px}
+.nmon div{background:var(--band);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:6px}
+.nmon i{font-style:normal;color:var(--rose);font-size:13px}.nmon b{font-family:"Instrument Serif",serif;font-weight:400;font-size:22px}
+.nmon small{color:var(--ink);font-size:13px}.nmon span{color:var(--soft);font-size:14px}
+.nemo{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:2px;margin-top:18px;border-radius:12px;overflow:hidden}
+.nemo div{background:var(--band);padding:14px;font-size:14px;color:var(--soft)}
+.nemo b{display:block;color:var(--rose);font-family:"Instrument Serif",serif;font-weight:400;font-size:22px}
+.nvg{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin-top:18px}
+.nvg img{width:100%;height:220px;object-fit:cover;border-radius:10px}
+.lbr{font-size:13.5px;color:var(--soft);margin-top:6px;display:block}
+@media(max-width:900px){.medh,.kcon,.nmon{grid-template-columns:1fr}.kcon article{grid-template-columns:110px minmax(0,1fr)}.npil{grid-template-columns:repeat(2,minmax(0,1fr))}.nemo{grid-template-columns:repeat(2,minmax(0,1fr))}.actv{grid-template-columns:1fr}.nvg{grid-template-columns:repeat(3,minmax(0,1fr))}.nvg img{height:150px}}
+.eng h2 em{color:var(--rose)}
+.eng h3{font-family:"Instrument Serif",serif;font-weight:400;font-size:30px;margin:44px 0 14px}
+.subg{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.sub{display:grid;grid-template-columns:180px minmax(0,1fr);background:var(--band);border:1px solid var(--line);border-radius:16px;overflow:hidden;color:inherit;text-decoration:none;transition:transform .25s}
+.sub:hover{transform:translateY(-3px)}
+.sub img{width:100%;height:100%;object-fit:cover;min-height:240px}
+.sub div{padding:18px;display:flex;flex-direction:column;gap:6px}
+.sub small{color:var(--soft);font-size:12px}
+.sub b{font-family:"Instrument Serif",serif;font-weight:400;font-size:24px;line-height:1.15}
+.sub i{color:var(--rose);font-size:14px}
+.sub blockquote{margin:6px 0 0;font-family:"Instrument Serif",serif;font-size:18px;line-height:1.4;color:var(--ink)}
+.sub span{margin-top:auto;font-size:13px;color:var(--rose)}
+.regs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.regs figure{margin:0;background:var(--band);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px}
+.regs figcaption b{display:block;color:var(--rose);font-size:14px}
+.regs figcaption span{font-size:12.5px;color:var(--soft)}
+.regs blockquote{margin:0;font-family:"Instrument Serif",serif;font-size:20px;line-height:1.35}
+.regs small{color:var(--soft);font-size:13px;margin-top:auto}
+@media(max-width:900px){.subg,.regs{grid-template-columns:1fr}.sub{grid-template-columns:120px minmax(0,1fr)}.sub img{min-height:200px}}
+.arcg{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(300px,100%),1fr));gap:14px;margin-top:20px}
+.arcg a{display:block;background:var(--band);border:1px solid var(--line);border-radius:12px;overflow:hidden;color:inherit;text-decoration:none}
+.arcg img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block}
+.arcg div{padding:10px 14px 12px}.arcg b{display:block;font-size:15px}.arcg span{font-size:13px;color:var(--soft)}
+.arc .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.arc .chips button{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:99px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer;min-height:40px}
+.arc .chips button.on{background:var(--rose);color:#1a0a0e;border-color:var(--rose)}
+.hkh{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);gap:clamp(24px,4vw,48px);align-items:center}
+.hkh img{width:100%;border-radius:14px;border:1px solid var(--line)}
+.hkb{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr;gap:14px;margin-top:28px}
+.hkb>div{background:var(--band);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:8px}
+.hkb .lab{font-size:12px;color:var(--rose);letter-spacing:.05em}
+.hkb .sw{display:grid;grid-template-columns:34px 1fr auto;align-items:center;gap:10px}
+.hkb .sw i{width:34px;height:34px;border-radius:8px;border:1px solid rgba(255,255,255,.25)}
+.hkb .sw b{font-size:14px;font-weight:600}.hkb small{color:var(--soft);font-size:13px}
+.hkb .cour{font-family:"Courier New",Courier,monospace;font-size:17px;margin:0;color:#e8c9cd}
+.hkb .tov{font-family:"Instrument Serif",serif;font-size:24px;margin:0;line-height:1.1}
+.hkt{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.hkt span{font-family:"Courier New",Courier,monospace;border:1px solid #AC1929;color:#f0d6d9;border-radius:6px;padding:6px 10px;font-size:14px}
+.hkg{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+.hkg figure{margin:0}.hkg img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px;border:1px solid var(--line)}
+.hkg figcaption{font-size:13px;color:var(--soft);margin-top:6px}
+@media(max-width:900px){.hkh,.hkb{grid-template-columns:1fr}.hkg{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.docv{position:relative;border-radius:14px;overflow:hidden;background:#000;aspect-ratio:16/9;margin-bottom:14px}.docv video{width:100%;height:100%;display:block;object-fit:contain;background:#000}.doct{position:absolute;left:12px;top:12px;background:rgba(20,6,10,.78);border-radius:99px;padding:5px 12px;font-size:13px;pointer-events:none}
+</style>
+</head>
+<body>
+
+<nav aria-label="Sections">
+  <b>Yara AbuZaid</b>
+  <div><a href="#ramadan">Ramadan</a><a href="#saudi">National days</a><a href="#slogans">Slogans</a><a href="#concepts">Concepts</a><a href="#social">Social</a><a href="#doubletree">DoubleTree</a><a href="#influencers">Influencers</a><a href="#results">Results</a><a href="#live">Published</a><a href="#film">Film</a><a href="#archive">Archive</a><a href="#english">English</a><a href="#writing">Writing</a><a href="#contact">Contact</a></div>
+</nav>
+
+<header class="band hero">
+  <div class="wrap top">
+    <div class="heroL">
+      <p class="who">Yara AbuZaid · Content Team Lead at NTAM · Arabic and English</p>
+      <h1 class="hook">I don’t just create content. I create what people <em>remember</em>.</h1>
+      <p class="lede">Award-winning campaigns for hotels, healthcare and lifestyle brands across Saudi Arabia, Egypt and the UAE. I write in Arabic and English, then shoot, direct and build the brand around the words.</p>
+      <div class="badge">
+        <img src="img/award.jpg" alt="Hotelier Awards 2026 trophy for Light in Every Step">
+        <div><strong>Best Campaign of the Year 2026</strong><span>Hotelier Saudi Awards · for “Light in Every Step”</span></div>
+      </div>
+    </div>
+    <figure class="portrait" style="margin:0">
+      <img src="img/portrait4.jpg" alt="Portrait of Yara AbuZaid" style="object-position:50% 25%">
+      <figcaption>Writer, strategist, director</figcaption>
+    </figure>
+  </div>
+  <div class="strip" aria-hidden="true"><div class="reel" id="reel"></div></div>
+</header>
+
+<section class="proof" aria-label="Highlights">
+  <div><b>2026 winner</b><span>Best Campaign of the Year, Hotelier Saudi Awards</span></div>
+  <div><b>Awarded film</b><span>my short film, Alexandria Short Film Festival</span></div>
+  <div><b>3 Ramadans</b><span>one campaign platform, used for three years</span></div>
+  <div><b>25+ hotels</b><span>across Egypt, KSA, UAE and Qatar</span></div>
+</section>
+
+<div class="toc" role="navigation" aria-label="Chapters">
+  <a href="#ramadan"><i>Chapter one</i><b>Ramadan and sacred seasons</b><small>Five years of Accor campaigns in Makkah, Madinah and Riyadh</small></a>
+  <a href="#slogans"><i>Chapter two</i><b>Slogans</b><small>Lines in Arabic, English and Spanish</small></a>
+  <a href="#concepts"><i>Chapter three</i><b>Creative concepts</b><small>Big ideas, with the routes I also pitched</small></a>
+  <a href="#social"><i>Chapter four</i><b>Social content</b><small>Captions and visuals by marketing appeal</small></a>
+  <a href="#film"><i>Chapter five</i><b>Film, scripts and shoots</b><small>Short film, documentary, storyboards, on set</small></a>
+  <a href="#writing"><i>Chapter six</i><b>Writing in every format</b><small>Articles, press, a book, poetry and songs</small></a>
+</div>
+
+<!-- CHAPTER 1 -->
+<section class="band" id="ramadan">
+  <div class="wrap">
+    <div class="chap"><span>Chapter one</span></div>
+    <h2>Ramadan and sacred seasons</h2>
+    <p class="intro">I’ve written the Ramadan campaigns for Accor’s Saudi hotels for five years, each one from the hotel’s own city, story and Quranic or cultural root, in Arabic first, then English. I design the post visuals too.</p>
+  </div>
+  <div class="wrap case" style="margin-top:44px">
+    <div class="media">
+      <img src="img/ram-slogan.jpg" alt="Campaign slogan page: Noor fi kol khatwa, Light in every step">
+      <div class="duo">
+        <img src="img/ram-door.jpg" alt="Campaign do-not-disturb door hangers">
+        <img src="img/ram-phones.jpg" alt="Campaign applied to Instagram and stories">
+      </div>
+      <img src="img/ram-stories.jpg" alt="Campaign Instagram stories: Al-Masjid Al-Nabawi umbrellas, a Quranic verse over the Madinah view, and Suhoor, with a French accent">
+      <p class="cap">Campaign identity and applications, Ramadan 2025</p>
+    </div>
+    <div>
+      <p class="kicker">Flagship · Sofitel Shahd Al Madinah · Ramadan 2025</p>
+      <h2>Light in Every Step</h2>
+      <p class="quote"><span class="ar">نور في كل خطوة</span>Every step is a step towards light.</p>
+      <p>Madinah’s name means “the enlightened city”, and the Prophet’s footsteps lit it. I built the whole Ramadan story on that: each guest moment, from arrival to Suhoor to the view of Al-Masjid Al-Nabawi, became one step of a journey of light, told with French art de vivre and never stated outright.</p>
+      <dl class="slate">
+        <dt>My role</dt><dd>Concept, Arabic and English slogan, shooting script, content calendar, GM greeting films, activation</dd>
+        <dt>Film</dt><dd>Two interwoven stories, a family and a solo business traveller, linked by light from arrival to Iftar</dd>
+        <dt>Activation</dt><dd><span class="ar">حكايات تنير القلب</span> “Tales Lighting Up the Heart”, weekend storytelling nights with podcast episodes</dd>
+      </dl>
+      <div class="result"><b>Result:</b> Best Campaign of the Year 2026 at the Hotelier Saudi Awards, and kept by the hotel as its Ramadan platform for three years.</div>
+    </div>
+  </div>
+  <div class="wrap">
+    <p class="kicker" style="margin-top:40px">The other routes I wrote for the same brief</p>
+    <div class="alts">
+      <div><b>Route 2</b><span class="ar">سُكنى النور تُسكِن الأفئدة</span><span>A sanctuary of light that soothes the hearts</span></div>
+      <div><b>Route 3</b><span class="ar">نور الرحمن بشهر الرحمة</span><span>The light of the Most Merciful, in the month of mercy</span></div>
+      <div><b>Route 4</b><span class="ar">ملاذ النور بمدينة النور</span><span>A haven of light in the city of light</span></div>
+      <div><b>CSR line</b><span class="ar" style="font-family:'Instrument Serif',serif;direction:ltr">Every Stay, Every Bite, A Light Shared.</span><span>“Light Up a Meal”: a meal donated for every booking</span></div>
+    </div>
+  </div>
+  <div class="wrap camps" id="camps"></div>
+</section>
+
+
+<section class="band dark" id="saudi">
+  <div class="wrap">
+    <div class="chap"><span>Chapter one, continued</span></div>
+    <h2>Saudi national days</h2>
+    <p class="quote" style="margin-top:18px;max-width:none"><span class="ar" style="font-size:1.25em">فخرٌ يتجدّد، وعطاءٌ لا ينتهي</span>Pride renewed, generosity that endures.</p>
+    <p class="intro">Every September I write Saudi National Day for Accor hotels in Makkah, Madinah, Jeddah and Riyadh: the concept, the captions in both languages, the visuals, the screens, the competitions and the event reels. Below are the published posts from Pullman Zamzam Makkah, year by year.</p>
+    <div class="sny" id="sny"></div>
+  </div>
+</section>
+
+<!-- CHAPTER 2 -->
+<section class="band dark" id="slogans">
+  <div class="wrap">
+    <div class="chap"><span>Chapter two</span></div>
+    <h2>Slogans people repeat</h2>
+    <p class="intro">Short, rhythmic and rooted in the place. Most of my Arabic lines play on a double meaning or an inner rhyme, which is why they stick.</p>
+    <div class="slw" id="slw"></div>
+  </div>
+</section>
+
+<!-- CHAPTER 3 -->
+<section class="band" id="concepts">
+  <div class="wrap">
+    <div class="chap"><span>Chapter three</span></div>
+    <h2>Creative concepts</h2>
+    <p class="intro">One insight, one big idea, then a system a whole team can run for a quarter. Where I pitched more than one route, you’ll see them all.</p>
+  </div>
+  <div class="wrap case" style="margin-top:40px">
+    <div class="media">
+      <div class="strip3" style="margin-top:0">
+        <img src="img/oasis-tower.jpg" alt="In the middle of everything, yet entirely your own: hotel tower by the Nile">
+        <img src="img/oasis-view.jpg" alt="Embrace the view from every corner">
+        <img src="img/oasis-pool.jpg" alt="We saved you a spot: poolside">
+        <img src="img/oasis-food.jpg" alt="La Palmeraie Moroccan dishes">
+        <img src="img/oasis-bar.jpg" alt="Late Oasis: evening at the bar">
+        <img src="img/oasis-spa.jpg" alt="Serenity Oasis: spa">
+      </div>
+      <p class="cap">Post visuals I created for the Q2 campaign</p>
+    </div>
+    <div>
+      <p class="kicker">Sofitel Cairo Nile El Gezirah · Q2 2026</p>
+      <h2>Your Oasis… Your Rhythm.</h2>
+      <p class="quote">One place. Different worlds.</p>
+      <p>El Gezirah means “the island”. It’s the only Cairo hotel with the Nile all around it, every room facing the water. So I turned the location into a feeling: an oasis in the middle of the city that moves at each guest’s rhythm.</p>
+      <dl class="slate">
+        <dt>Pillars</dt><dd>Serenity, Social, Scenic, Private and Late Oasis, each mapped to a revenue stream</dd>
+        <dt>Arc</dt><dd>April discover, May live (Eid), June stay (summer)</dd>
+        <dt>Voice</dt><dd>Scroll-stopping, short, smart wordplay; luxurious but not poetic</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="wrap case flip" style="margin-top:60px">
+    <div class="media">
+      <img src="img/wpcal-lived.jpg" alt="Winter Palace content outline page: History is not preserved. It is lived.">
+      <div class="duo tall">
+        <img src="img/wp-itstime.jpg" alt="It's time: gloved hand ringing the reception bell">
+        <img src="img/wp-gather.jpg" alt="Why We Gather: embossed invitation card">
+      </div>
+      <p class="cap">From the monthly content outlines and Q1 concept</p>
+    </div>
+    <div>
+      <p class="kicker">Sofitel Winter Palace Luxor · all content calendars</p>
+      <h2>History is not preserved. It is lived.</h2>
+      <p>I write every monthly calendar for the Winter Palace. For Q1 2026 I built “The truth about Luxor in winter”: why royals and archaeologists migrated south each season, told so the audience moves from “this place is beautiful” to “I can imagine myself here” to “I feel attached to this place”.</p>
+      <dl class="slate">
+        <dt>Pillars</dt><dd>Palace Rituals, Moments, Luxor discovery, Luxor Nights (Ramadan-ready), Cinematic Luxor tied to the Luxor African Film Festival</dd>
+        <dt>Hooks</dt><dd>“Before Luxor wakes…”, “Can you time-travel?”, “Save this feeling”</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="mini">
+      <div><b>Nusuk Hajj · Pullman Zamzam Makkah</b><span>Hajj 2026 concept built around the Nusuk app journey: it picks up where Nusuk’s booking steps end, guiding pilgrims through health, packing, rituals and mindset with a storyline that leads them to the hotel.</span><span class="q"><span class="ar">بقلبنا لَبَّيْنَا</span> · With our hearts, we answer</span></div>
+      <div><b>Dar Al Taqwa, Madinah</b><span>January 2025 winter campaign built on one word, “wrapped”: care, warmth and luxury at once.</span><span class="q">Your Home Wrapped in Opulence · <span class="ar">روحانيات تغمرك وفخامة تأسرك</span></span></div>
+      <div><b>Mövenpick Riyadh, December</b><span>Winter Wonderland Light-Up, a festive season campaign: “Enchanted Winter Glow”.</span><span class="q">Let the Lights Guide You to a Magical Winter at Mövenpick Riyadh</span></div>
+      <div><b>Spain’s national health system</b><span>Campaign routes written in Spanish for the SNS, from prevention to specialist care.</span><span class="q"><span class="es" style="font-style:italic">Contigo, siempre.</span> · Tu salud importa.</span></div>
+      
+    </div>
+  </div>
+  <div class="wrap" style="margin-top:60px">
+    <p class="kicker">NewBridge × Lundbeck · neuropsychiatry regional event · 2026</p>
+    <h2>Nine ways to show what the brain can’t</h2>
+    <p class="intro">In November 2025 NewBridge Pharmaceuticals took over Lundbeck’s commercial operations across the Middle East and North Africa. For their regional stand-alone event on depression, bipolar disorder and schizophrenia, I planned the event concept from the first idea to the booth: nine creative territories, each with its own slogan, rationale, visual and activation, so the client could choose the story.</p>
+    <div class="lflow">
+      <div><b>1 · Insight</b><span>The brain is a network; these disorders are about broken connections, and NewBridge’s name is a bridge.</span></div>
+      <div><b>2 · Territory</b><span>Nine metaphors for connection: cosmic web, light, puzzle, prism, data, planets, mind trap, maze, harmony.</span></div>
+      <div><b>3 · Line and visual</b><span>One slogan and one key visual per route, written to stay scientific, never promising outcomes.</span></div>
+      <div><b>4 · Event execution</b><span>Example: the Lundbeck star appears at the entrance, then branches into lit pathways leading to each scientific booth.</span></div>
+    </div>
+    <div class="lbg" id="lbg"></div>
+    <h3 style="margin-top:44px;font-family:'Instrument Serif',serif;font-weight:400;font-size:30px">Activations I planned for the event</h3>
+    <div class="acts" style="margin-top:14px">
+      <div><b>The star entrance</b><span>Lundbeck’s star greets guests at the entrance, then branches into lit pathways that lead to each scientific booth. Every path is one part of the programme, and all return to brain health.</span></div>
+      <div><b>The cosmic web installation</b><span>A monumental suspended network of illuminated threads and nodes; regions light up as each scientific topic is introduced.</span></div>
+      <div><b>Disorder stations</b><span>Depression, bipolar disorder and schizophrenia each get their own illuminated station on the shared network, so HCPs move from the big picture into each condition.</span></div>
+      <div><b>The prism walk</b><span>A glass prism splits one beam into three coloured corridors, one per disorder, so each disorder is explored on its own path.</span></div>
+    </div>
+    <div class="actv" style="grid-template-columns:1.2fr 1fr 1fr"><img src="img/med-lb-act-board.jpg" alt="Lundbeck disorder stations activation board" loading="lazy"><img src="img/med-lb-act-prism.jpg" alt="Prism walk-through activation" loading="lazy"><img src="img/med-lb-act-illum.jpg" alt="Illuminating Connections event visual" loading="lazy"></div>
+  </div>
+  <div class="wrap med" id="medical">
+    <p class="kicker">Healthcare and pharma · concepts, rationales and activations</p>
+    <h2>Medical stories people actually feel</h2>
+    <p class="intro" style="margin-top:14px">In pharma the idea has to move an audience and survive medical review. Every route below starts from the science or the patient insight, says why it works, and ends in something an HCP or a woman can do.</p>
+
+    <div class="medh"><div><p class="kicker">Keytruda women’s oncology · EIOC 2026 congress</p><h3>One story across four women’s cancers</h3>
+    <p><b>The brief:</b> a 360° congress experience introducing Keytruda’s new ovarian cancer indication, while telling the bigger story of four women’s cancers (breast, cervical, endometrial, ovarian), keeping each indication distinct and medically credible. The new subcutaneous form takes 1 minute every 3 weeks or 2 minutes every 6 weeks, according to the prescribed treatment plan.</p></div>
+    <img src="img/med-kt-act-board.jpg" alt="Keytruda congress activation zones board" loading="lazy"></div>
+    <div class="kcon"><article><img src="img/med-kt-butterfly.jpg" alt="Keytruda concept: The Butterfly Effect" loading="lazy"><div><span class="n">Concept 1</span><b>The Butterfly Effect</b><em>One small change. A different world.</em><small>Appeals: Hope, transformation, empowerment</small><p><strong>Rationale.</strong> Lorenz’s butterfly effect: a tiny change can trigger a massive outcome. A one-minute subcutaneous injection is that small change in the treatment experience. The ovary’s shape echoes a butterfly, and its four wings carry the four indications: breast, cervical, endometrial, ovarian.</p></div></article><article><img src="img/med-kt-clock.jpg" alt="Keytruda concept: Take Back Your Time" loading="lazy"><div><span class="n">Concept 2</span><b>Take Back Your Time</b><em>More moments for life.</em><small>Appeals: Empowerment, freedom, storytelling</small><p><strong>Rationale.</strong> Cancer makes time feel like it belongs to treatment. One minute, according to the prescribed plan, gives it back: a daughter’s school play, a family dinner, a work milestone. The desire for normal life becomes believable.</p></div></article><article><img src="img/med-kt-key.jpg" alt="Keytruda concept: Your Key to Life" loading="lazy"><div><span class="n">Concept 3</span><b>Your Key to Life</b><em>Unlock more possibilities.</em><small>Appeals: Hope, possibility, emotional connection</small><p><strong>Rationale.</strong> The brand name holds a key. The ankh, the ancient Egyptian symbol of life, is a key too. Together they unlock the idea, then hand over to the science: behind the symbol is evidence, mechanism and progress.</p></div></article><article><img src="img/med-kt-roots.jpg" alt="Keytruda concept: Roots of Hope" loading="lazy"><div><span class="n">Concept 4</span><b>Roots of Hope</b><em>Your roots. Your strength. Your journey.</em><small>Appeals: Emotional connection, resilience, science</small><p><strong>Rationale.</strong> Cancer shows at the surface but its biology runs deeper. Pembrolizumab acts on an underlying mechanism, immune evasion, not only what is visible. Roots carry a double meaning: the biology beneath the disease and the people who keep a woman grounded.</p></div></article></div>
+    <h4>Activation ideas for the booth</h4>
+    <div class="acts"><div><b>The Ripple Effect</b><span>One interaction sends a visual ripple that lights up the four indications. A life-size digital butterfly unfolds its wings as visitors approach.</span></div><div><b>60 Seconds of Life</b><span>A one-minute immersive film of the small moments a woman wants time for, beside a giant clock whose numbers become the four indications.</span></div><div><b>The Ankh Portal</b><span>A monumental ankh-shaped portal leading into an immersive women’s oncology experience, with the data inside.</span></div><div><b>Unlock the Evidence</b><span>Each HCP receives a physical key card that unlocks evidence, data and treatment information at each station.</span></div><div><b>The Root Journey</b><span>One glowing root splits into four branches (breast, cervical, endometrial, ovarian), each opening its own evidence story.</span></div></div>
+    <div class="actv"><img src="img/med-kt-act-butterfly.jpg" alt="Butterfly booth activation" loading="lazy"><img src="img/med-kt-act-roots.jpg" alt="Immersive root room activation" loading="lazy"><img src="img/med-kt-act-panel.jpg" alt="Glowing evidence panel activation" loading="lazy"></div>
+    <blockquote class="scr"><span>Film script excerpt</span>“Behind every diagnosis… there is a deeper story. A story written in cells. In pathways. In the ways cancer can evade immune surveillance.” … “Because every path we advance in opens another possibility for her life.”</blockquote>
+
+    <div class="medh" style="margin-top:80px"><div><p class="kicker">Novartis UAE · breast health · Q4 2026</p><h3>In Your BrEaST Interest</h3>
+    <p><b>The insight:</b> women already know breast cancer matters. The opportunity is to turn awareness into understanding, so women know their own normal and feel confident taking the next step.</p>
+    <p><b>The central idea:</b> a pink balloon is a thought worth carrying forward, a question, a reminder, a conversation, passed from woman to woman, because awareness should never stop with the person who first receives it. Its ribbon becomes the journey line through every post.</p></div>
+    <img src="img/med-nv-ribbon.jpg" alt="In Your BrEaST Interest key visual: a pink ribbon over the Dubai skyline" loading="lazy"></div>
+    <div class="nflow"><span>Awareness</span><i>→</i><span>Understanding</span><i>→</i><span>Personal relevance</span><i>→</i><span>Curiosity</span><i>→</i><span>Conversation</span><i>→</i><span>Action</span></div>
+    <div class="npil"><span><b>UYB</b>Understand Your Breasts</span><span><b>AWF</b>Ask Without Fear</span><span><b>FOF</b>Fear or Fact?</span><span><b>WHN</b>What Happens Next?</span><span><b>BTC</b>Beyond the Chapter</span><span><b>TNS</b>The Next Step</span></div>
+    <div class="nmon"><div><i>October</i><b>Start the conversation</b><small>Objective: Shift awareness into understanding</small><span>Bridge carousel · anonymous question box · “Not every sign is a lump” · “What if I’m too scared to check?”</span></div><div><i>November</i><b>Open the conversation</b><small>Objective: Make the unknown known</small><span>Doctor reel answering the most-asked question · Scanxiety · mental health · “It’s probably nothing” · Fear or Fact: breast pain</span></div><div><i>December</i><b>Turn knowledge into confidence</b><small>Objective: Move understanding into action</small><span>Small habits · booking a screening is easier than you think · not everything unusual is cancer · “When should I stop waiting?”</span></div></div>
+    <div class="nemo"><div><b>Care</b>Someone cared enough to tell us.</div><div><b>Connection</b>One woman passes it to another.</div><div><b>Courage</b>We don’t carry uncertainty alone.</div><div><b>Empowerment</b>When women know more, we move forward together.</div></div>
+    <h4>Activation and content ideas</h4>
+    <div class="acts">
+      <div><b>Ask Without Fear</b><span>Women write questions on notes placed inside balloons; doctors answer the most-asked one on camera the next month.</span></div>
+      <div><b>Metaphors that carry the message</b><span>The balloon passes it, the record plays it, the coffee starts it, the podcast answers it, the ring carries it forward.</span></div>
+      <div><b>The ribbon as protection</b><span>The ribbon wraps like an Emirati woman’s scarf: “Care for yourself with confidence.” Early detection is protection.</span></div>
+      <div><b>WhatsApp next step</b><span>December posts move women from feed to WhatsApp for screening information, turning understanding into action.</span></div>
+    </div>
+    <div class="nvg"><img src="img/med-nv-balloon.jpg" alt="Woman holding a pink balloon" loading="lazy"><img src="img/med-nv-scarf.jpg" alt="Care for yourself with confidence: pink ribbon as scarf" loading="lazy"><img src="img/med-nv-notes.jpg" alt="Ask Without Fear: questions inside a balloon" loading="lazy"><img src="img/med-nv-scared.jpg" alt="What if I’m too scared to check?" loading="lazy"><img src="img/med-nv-record.jpg" alt="The record plays the message" loading="lazy"><img src="img/med-nv-ring.jpg" alt="The ring carries it forward" loading="lazy"></div>
+  </div>
+  <div class="wrap hk" style="margin-top:60px">
+    <div class="hkh">
+      <div>
+        <p class="kicker">Hawks MC Dubai · full brand identity, guidelines and content</p>
+        <h2>And We’re Rolling</h2>
+        <p>I built the Hawks MC Dubai brand end to end: the visual identity, the colour palette, the typography, the tone of voice, the brand and content guidelines, and the content plan that runs the club’s Instagram.</p>
+        <p>The big idea: a motorcycle club lives on the road, so its year is written as a screenplay. Every post is set in Courier 12, the industry font for scripts, with scene headers, dialogue and stage directions, starring the members themselves.</p>
+        <p class="quote">“Resolutions? Nah. We don’t make promises; we make memories.”</p>
+        <p><a href="https://www.instagram.com/hawks_mc_dubai/" target="_blank" rel="noopener">See the brand live on Instagram</a></p>
+      </div>
+      <img src="img/hk-p01.jpg" alt="Hawks MC Dubai brand plan cover: a black motorcycle on black with red accents" loading="lazy">
+    </div>
+    <div class="hkb">
+      <div><span class="lab">Colour palette</span><div class="sw"><i style="background:#000"></i><b>Road black</b><small>#000000</small></div><div class="sw"><i style="background:#AC1929"></i><b>Hawks red</b><small>#AC1929</small></div><div class="sw"><i style="background:#fff"></i><b>Script white</b><small>#FFFFFF</small></div></div>
+      <div><span class="lab">Typography</span><p class="cour">INT. DUBAI HIGHWAY – DAWN</p><small>Courier 12 for every caption and on-post script, so each piece reads like a screenplay page; heavy bold caps for titles.</small></div>
+      <div><span class="lab">Tone of voice</span><p class="tov">Bold. Cinematic. Raw. Witty.</p><small>Epic rides, group moments and fun, never corporate. Every post signs off with #And_We’re_Rolling.</small></div>
+      <div><span class="lab">Visual identity</span><small style="font-size:14px">Dark, cinematic frames of roaring motorcycles, desert highways, rugged terrain and Dubai’s urban streets, laced with witty slogans and action shots.</small></div>
+    </div>
+    <div class="hkt"><span>And we’re rolling!</span><span>2025 script title: More Adventure</span><span>Let’s ride and write 2025</span><span>Roll camera, roll throttle</span><span>New roads, new stories</span></div>
+    <div class="hkg">
+      <figure><img src="img/hk-p03.jpg" alt="Guideline page: theme, visual identity and tone" loading="lazy"><figcaption>Guidelines: theme, visual identity, tone</figcaption></figure>
+      <figure><img src="img/hk-p04.jpg" alt="The idea: 2025 is an unscripted adventure waiting to be written" loading="lazy"><figcaption>The idea: a year written as a screenplay</figcaption></figure>
+      <figure><img src="img/hk-p06.jpg" alt="Visual moodboard: movie posters, polaroids, screenplay headers" loading="lazy"><figcaption>Visual direction: posters, polaroids, ending credits</figcaption></figure>
+      <figure><img src="img/hk-p11.jpg" alt="Post page: Hawks knows the art of riding, with script-style tone of voice" loading="lazy"><figcaption>Content: awareness post in script format</figcaption></figure>
+      <figure><img src="img/hk-p15.jpg" alt="Post page: Lebanon ride recap" loading="lazy"><figcaption>Content: Lebanon ride recap reel</figcaption></figure>
+      <figure><img src="img/hk-p05.jpg" alt="Campaign taglines and rationale" loading="lazy"><figcaption>Taglines and rationale</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<div class="lines" aria-label="Lines I have written"><div class="reel" id="lines"></div></div>
+
+<!-- CHAPTER 4 -->
+<section class="band" id="social">
+  <div class="wrap">
+    <div class="chap"><span>Chapter four</span></div>
+    <h2>Social content, by marketing appeal</h2>
+    <p class="intro">I write the captions and design the visuals. Each card is real copy, labelled with the appeal it uses, from spiritual and nostalgic to FOMO, humour and plain rational value.</p>
+    <div class="chips" role="group" aria-label="Filter by appeal" id="chips"></div>
+    <div class="voices" id="vlist"></div>
+
+    <div class="tdc">
+      <div class="crs" id="crs" tabindex="0" aria-label="Carousel: How to prevent tone-deaf campaigns"></div>
+      <div>
+        <p class="kicker">NTAM Group · Instagram carousel · 6 slides</p>
+        <h3>What happens when a message doesn’t fit the culture?</h3>
+        <p style="margin-top:12px">An agency thought-leadership carousel on tone-deaf campaigns. One rule per slide, each staged as a culture clash so the idea lands before the words do: Moment, Meaning, Market, Manners, Media.</p>
+        <p class="quote" style="font-size:22px">“In today’s landscape, relevance isn’t optional it’s everything.”</p>
+        <div class="crb"><button type="button" id="crp" aria-label="Previous slide">‹</button><span id="crn">1 / 6</span><button type="button" id="crx" aria-label="Next slide">›</button></div>
+      </div>
+    </div>
+    <div class="camps" style="grid-template-columns:repeat(auto-fill,minmax(min(260px,100%),1fr))">
+      <article class="camp"><div class="pics"><img src="img/old-accor.jpg" alt="Swissôtel Al Maqam Makkah Instagram grid" style="height:180px"></div><div class="bd"><span class="who2">Swissôtel Al Maqam Makkah</span><p>Bilingual feed for Accor Makkah.</p></div></article>
+
+    </div>
+  </div>
+</section>
+
+
+<section class="band alt" id="doubletree">
+  <div class="wrap dtw">
+    <div class="ig">
+      <div class="igh"><b>doubletreebyhiltonmangroovy</b><span>12K followers · El Gouna, Red Sea</span></div>
+      <div class="igg" id="igg"></div>
+    </div>
+    <div>
+      <p class="kicker">DoubleTree by Hilton Mangroovy El Gouna · the whole feed</p>
+      <h2>A resort feed that reads like a magazine</h2>
+      <p style="margin-top:16px">I run this account end to end: the monthly calendar, every caption and every post visual, from the grid’s rhythm to the type on each cover. The feed alternates editorial photography, split-frame collages and reels, held together by one voice: playful hooks, then a soft, specific invitation.</p>
+      <dl class="slate">
+        <dt>Hooks</dt><dd>“Plot twist: You’ve found it.” · “Plans? Switched.” · “Their holiday. Their rules.” · “Check in. Dive in.”</dd>
+        <dt>Covers</dt><dd>“A little change of scenery” · “You booked the right hotel” · “Why say YES to this wedding venue?” · “The day is yours. The details are ours.”</dd>
+        <dt>Formats</dt><dd>Carousels (wedding packages, venue), reels, split-frame collages, single editorial posts</dd>
+      </dl>
+      <p><a href="https://www.instagram.com/doubletreebyhiltonmangroovy/">See the live feed on Instagram</a></p>
+    </div>
+  </div>
+  <div class="wrap dtc" id="dtc"></div>
+</section>
+
+
+<section class="band alt" id="influencers">
+  <div class="wrap">
+    <div class="inf">
+      <div>
+        <p class="kicker">Influencer marketing · beauty, lifestyle and FMCG</p>
+        <h2>I made it, shot it, cut it and wrote it</h2>
+        <p style="margin-top:16px">As content creator for Egyptian influencer <b>Logina Salah</b>, I ran the whole content pipeline for her paid partnerships. I filmed her videos, shot her photos, edited everything and wrote the captions. Each brief meant one job: make the product feel like part of her life, not an ad dropped into it.</p>
+        <ul class="roles">
+          <li><b>Beauty and personal care</b><span>Pantene, Johnson’s, Iram Jewelry, GSpa at the Four Seasons</span></li>
+          <li><b>Food, health and lifestyle</b><span>Galaxy chocolate, Buscopan, Oxi Arabia, the Ablo app</span></li>
+          <li><b>Causes and entertainment</b><span>World Food Programme, Ahl Masr Hospital, E! People’s Choice Awards</span></li>
+          <li><b>My role</b><span>Videography, photography, editing, caption writing and campaign management</span></li>
+        </ul>
+        <p style="margin-top:18px"><a href="https://www.behance.net/gallery/130289247/Logina-Salah-Content-creating">See the project on Behance</a></p>
+      </div>
+      <figure class="iramv">
+        <div class="phone"><video src="media/iram.mp4" poster="img/iram-poster.jpg" controls playsinline preload="none"></video></div>
+        <figcaption><b>Iram Jewelry × Logina Salah</b><span>Concept, shooting, editing and caption: all mine. Outdoor product close-ups of the rings, bracelet and necklace in natural light, then a talking-to-camera segment so the pieces feel worn, not advertised.</span></figcaption>
+      </figure>
+    </div>
+    <p class="kicker" style="margin-top:48px">How I executed every brand deal, end to end</p>
+    <div class="exec" style="margin-top:14px"><span><b>1</b>Brief and concept</span><span><b>2</b>Shot list and location</span><span><b>3</b>Filming and photography</span><span><b>4</b>Editing</span><span><b>5</b>Caption and publishing</span></div>
+    <div class="bw bw6" aria-label="Brands">
+        <span class="hi">Pantene<small>Hair care</small></span>
+        <span class="hi">Johnson’s<small>Personal care</small></span>
+        <span class="hi">Iram Jewelry<small>Jewellery</small></span>
+        <span class="hi">GSpa<small>Four Seasons</small></span>
+        <span>Galaxy<small>Chocolate</small></span>
+        <span>Buscopan<small>Health</small></span>
+        <span>Oxi Arabia<small>Home care</small></span>
+        <span>Ablo<small>App</small></span>
+        <span>WFP<small>Cause</small></span>
+        <span>Ahl Masr<small>Hospital</small></span>
+        <span>E! PCAs<small>Entertainment</small></span>
+        <span>Logina Salah<small>Influencer</small></span>
+      </div>
+    <div class="uae">
+      <div class="yr">2024</div>
+      <div>
+        <p class="kicker" style="margin:0 0 6px">Dubai, UAE · advertising, marketing and sales</p>
+        <p style="margin:0">I spent 2024 in the UAE on the commercial side of media at Al Serh Media in Dubai: selling advertising, building marketing proposals and pitching campaigns to clients. It taught me what a brand actually pays for, and that’s why my content is built to sell, not just to look good.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band" id="results">
+  <div class="wrap">
+    <p class="kicker">Best-performing content · Accor Makkah, Madinah and Riyadh · 2026</p>
+    <h2>The posts audiences chose</h2>
+    <p class="intro" style="margin-top:16px">The top posts by likes on the hotel accounts I write and design for: Pullman ZamZam, Fairmont, Swissôtel, Sofitel and Mövenpick. The pattern is clear. Spiritual, sensory storytelling (Fajr, Tawaf, the return to Madinah) outperforms promotional posts by a wide margin.</p>
+    <div class="bestk"><span><b>1,058</b>likes, Fairmont Makkah reel</span><span><b>796</b>Pullman ZamZam Makkah, Umrah reel</span><span><b>770</b>Sofitel Shahd, Madinah after Hajj</span><span><b>594</b>Swissôtel Al Maqam, family post</span></div>
+    <div class="bestg" id="bestg"></div>
+    <p style="margin-top:18px;font-size:13px;color:var(--soft)">Public like counts read from Instagram in November 2026. Tap any post to open it.</p>
+  </div>
+</section>
+
+<section class="band dark live" id="live">
+  <div class="wrap">
+    <p class="kicker">Published work · live on Instagram</p>
+    <h2>Concept, script, visuals and caption: mine, then live</h2>
+    <p class="intro" style="margin-top:16px">A selection of posts I conceived and executed end to end, shown here as they were published: reels, carousels and statics. Swipe the carousels and play the reels.</p>
+    <h3>Pullman ZamZam Makkah and Madina</h3>
+    <div class="liveg" id="liveA"></div>
+    <h3>Sofitel Cairo Nile El Gezirah</h3>
+    <div class="liveg" id="liveB"></div>
+    <h3>DoubleTree by Hilton Mangroovy El Gouna</h3>
+    <div class="liveg" id="liveC"></div>
+  </div>
+</section>
+
+<!-- CHAPTER 5 -->
+<section class="band dark" id="film">
+  <div class="wrap film">
+    <img src="img/festival.jpg" alt="Yara on the red carpet at the Alexandria Short Film Festival">
+    <div>
+      <div class="chap"><span>Chapter five</span></div>
+      <h2>Film, scripts and shoots</h2>
+      <p class="quote" style="margin-top:18px">An award-winning short film, written and directed by me.</p>
+      <p>My short film was awarded at the Alexandria Short Film Festival. Directing is where all my training meets: screenwriting, camera, lighting and working with actors. I bring the same craft to brand films.</p>
+    </div>
+  </div>
+  <div class="wrap fal">
+    <div class="falv"><video src="media/fallacy-teaser.mp4" poster="img/fallacy-076.jpg" controls playsinline preload="none"></video></div>
+    <div>
+      <p class="kicker">Award winner · Alexandria Short Film Festival</p>
+      <h3 style="margin:6px 0 10px;font-size:40px">Fallacy</h3>
+      <p>A 13-minute near-future short about a system that promises you a life “exactly as you want it”, and what that promise costs. Written and directed by me, from script and storyboard through art direction, the shoot and the edit.</p>
+      <dl class="slate" style="margin-top:14px"><dt>Role</dt><dd>Writer and director</dd><dt>Craft</dt><dd>Script, storyboard, art direction, cinematography, Premiere Pro and After Effects</dd><dt>Year</dt><dd>2023</dd></dl>
+      <p style="font-size:14px;color:var(--soft)">The player shows a 45-second cut of moments from the film. <a href="https://www.behance.net/gallery/185022585/Movie-Fallacy" target="_blank" rel="noopener">Watch the full film on Behance</a></p>
+    </div>
+  </div>
+  <div class="wrap falst"><img loading="lazy" src="img/fallacy-022.jpg" alt="Still from Fallacy"><img loading="lazy" src="img/fallacy-040.jpg" alt="Still from Fallacy"><img loading="lazy" src="img/fallacy-058.jpg" alt="Still from Fallacy"><img loading="lazy" src="img/fallacy-076.jpg" alt="Still from Fallacy"><img loading="lazy" src="img/fallacy-112.jpg" alt="Still from Fallacy"></div>
+  <div class="wrap">
+    <h3 style="margin-top:56px">Showreel</h3>
+    <div class="slots">
+      <div class="slot"><span>Video one</span></div>
+      <div class="slot"><span>Video two</span></div>
+      <div class="slot"><span>Video three</span></div>
+    </div>
+  </div>
+  <div class="wrap case flip" style="margin-top:64px">
+    <div class="media">
+      <div class="docv"><video id="wpdoc" poster="img/wpdoc-poster.jpg" controls playsinline preload="none" data-src="doc2/playlist.txt"></video><span class="doct">The Palace Life Through Eras · global documentary · 10 min</span></div>
+      <img src="img/wp-camera.jpg" alt="Storyboard frame: a gloved hand on a 1900s folding camera overlooking the Nile">
+      <div class="trio">
+        <img src="img/wp-stair.jpg" alt="Storyboard frame: arrival on the grand staircase">
+        <img src="img/wp-writer.jpg" alt="Storyboard frame: a writer in the Victorian lounge">
+        <img src="img/wp-chef.jpg" alt="Storyboard frame: the chef in the palace kitchen">
+      </div>
+    </div>
+    <div>
+      <p class="kicker">Sofitel Winter Palace Luxor · global documentary</p>
+      <h2>The Palace Life Through Eras</h2>
+      <p class="quote">“The sun hung low over the Nile, painted in hues of devotion and dream.”</p>
+      <p>A 12 to 15 minute immersive docudrama. The hotel opened in 1886 and hosted Agatha Christie, Howard Carter and Winston Churchill. A 1900s folding camera is the time machine: every shutter click jumps an era in the same room.</p>
+      <dl class="slate">
+        <dt>My role</dt><dd>Concept, full script and narration, shooting list, storyboard, and directing on set</dd>
+        <dt>Cut-downs</dt><dd>Instagram episodes built around single characters</dd>
+      </dl>
+    </div>
+  </div>
+  <div class="wrap">
+    <h3 style="margin-top:64px">Reel and film scripts</h3>
+    <div class="mini">
+      <div><b>Light in Every Step</b><span>Hero film shooting script, six scenes from arrival to Iftar.</span><span class="q">“Every step, is a step towards light.”</span></div>
+      <div><b>GM Ramadan greetings</b><span>Two bilingual greeting films where the slogan is written in light.</span><span class="q">“Ramadan is the month of light. May each day bring you closer to it.”</span></div>
+      <div><b>Behind Every Gathering</b><span>LinkedIn reel for Sofitel Cairo Downtown Nile, timed to the second.</span><span class="q">“Every gathering starts before the guests arrive.”</span></div>
+      <div><b>Spanish employment law</b><span>Expert explainer reels for lawyer Iván Suárez, scene by scene with on-screen text.</span><span class="q">“Annual leave is never optional.”</span></div>
+      <div><b>Keytruda congress film</b><span>Science-led script that keeps a human ending.</span><span class="q">“Behind every diagnosis… there is a deeper story.”</span></div>
+      <div><b>Ramadan teaser and recap</b><span>Mövenpick Riyadh reel: atmosphere, food, then the chefs.</span><span class="q">“It’s an experience that returns every year… richer.”</span></div>
+    </div>
+    <h3 style="margin-top:64px">Storyboards</h3>
+    <div class="sb" id="sb"></div>
+    <h3 style="margin-top:64px">Shoots</h3>
+    <div class="shoots">
+      <figure style="margin:0"><img src="img/onset.jpg" alt="Yara on set at a hotel shoot, checking the frame on a monitor"><figcaption class="cap" style="margin-top:8px">On set, directing a hotel shoot</figcaption></figure>
+      <div class="plan">
+        <p class="kicker" style="margin:0">Sofitel Legend Old Cataract Aswan · documentary shooting plan, day one</p>
+        <table>
+          <tr><td>1:00–2:30 PM</td><td>Exteriors: wide façade with the Nile, entrances, architectural details, the mountain view from Thomas Cook’s standing point</td></tr>
+          <tr><td>2:30–4:00 PM</td><td>Interiors: pendulum clock, the corridor of legends’ portraits, Palace Wing and Nile Wing suites</td></tr>
+          <tr><td>4:00–5:30 PM</td><td>Agatha Christie sequence: corridor walk, her desk with a working typewriter, the balcony, the suite plate</td></tr>
+        </table>
+        <p class="soft" style="font-size:15px;margin:14px 0 0">Props list, shot list and schedule written by me. I also wrote the Winter Palace shooting list and the shooting plan for Sofitel Cairo Downtown Nile’s Heartists film.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHAPTER 6 -->
+<section class="band arc" id="archive">
+  <div class="wrap">
+    <p class="kicker">Archive · 2021 to 2024</p>
+    <h2>Where it started</h2>
+    <p class="intro" style="margin-top:14px">Before the team-lead years: influencer campaigns, an awareness campaign for my own film, and bilingual feeds for hotels in the UAE, Qatar, Egypt and Saudi Arabia, plus car rental and electronics brands. Captions, concepts and calendars by me. Tap any page to open it full size.</p>
+    <div class="chips" id="arcf"><button class="on" data-f="all">All</button><button data-f="inf">Influencer and FMCG</button><button data-f="hosp">Hospitality</button><button data-f="auto">Automotive and tech</button><button data-f="film">Film</button></div>
+    <div class="arcg" id="arcg"></div>
+  </div>
+</section>
+
+<section class="band dark eng" id="english">
+  <div class="wrap">
+    <p class="kicker">English writing · one writer, many registers</p>
+    <h2>I write English the way it’s read: <em>closely</em></h2>
+    <p class="intro" style="margin-top:14px">Personal essays, narration, a published journal, a talk, B2B copy and brand voices. Every line below is mine, taken from my own files and published work.</p>
+    <h3>Essays on Substack</h3>
+    <div class="subg"><a class="sub" href="https://yaraabuzaid.substack.com/p/a-letter-to-future-me" target="_blank" rel="noopener"><img src="img/sub-letter.jpg" alt="Cover of the essay A Letter to Future Me" loading="lazy"><div><small>Nov 2026 · yaraabuzaid.substack.com</small><b>A Letter to Future Me</b><i>On identity, love, belonging, and becoming.</i><blockquote>“I spent years treating my soul like a courtroom where every version of myself stood before an invisible jury. The therapist against the artist. The woman dressed in black against the woman in the pink dress.”</blockquote><span>Read the essay →</span></div></a><a class="sub" href="https://yaraabuzaid.substack.com/p/how-islam-treats-womens-psyche" target="_blank" rel="noopener"><img src="img/sub-islam.jpg" alt="Cover of the essay How Islam treats women’s psyche" loading="lazy"><div><small>Jul 2026 · yaraabuzaid.substack.com</small><b>How Islam treats women’s psyche</b><i>A deep dive, from a therapist’s perspective.</i><blockquote>“The first words of an entire Surah begin with the emotional pain of one woman and Allah telling her he heard her. As therapists, we often say that healing begins when someone feels heard.”</blockquote><span>Read the essay →</span></div></a><a class="sub" href="https://yaraabuzaid.substack.com/p/letting-go-of-summer" target="_blank" rel="noopener"><img src="img/sub-summer.jpg" alt="Cover of the essay Letting go of Summer." loading="lazy"><div><small>May 2026 · yaraabuzaid.substack.com</small><b>Letting go of Summer.</b><i>Prose poem</i><blockquote>“I memorized absence like scripture, turned delay into faith and built a lifetime inside a moment that never came. Time did not stand still, but I did.”</blockquote><span>Read the essay →</span></div></a><a class="sub" href="https://yaraabuzaid.substack.com/p/heartbreak-is-a-strange-gift-but" target="_blank" rel="noopener"><img src="img/sub-heart.jpg" alt="Cover of the essay Heartbreak is a strange gift. (But Let’s Not Romanticise It)" loading="lazy"><div><small>Apr 2026 · yaraabuzaid.substack.com</small><b>Heartbreak is a strange gift. (But Let’s Not Romanticise It)</b><i>Let me hold your hand through this.</i><blockquote>“Heartbreak is a strange gift of suffering. It leaves you holding all this love, with no one to give, and no future to attach it to.”</blockquote><span>Read the essay →</span></div></a></div>
+    <h3>Nine registers, one pen</h3>
+    <div class="regs"><figure><figcaption><b>Cinematic narration</b><span>Sofitel Winter Palace Luxor · documentary script</span></figcaption><blockquote>“The sun hung low over the Nile, painted in hues of devotion and dream. The Winter Palace stood in a city named for grandeur. But then, grandeur became intimate. Personal. Eternal.”</blockquote><small>Regal, poetic, built for a British narrator’s voice.</small></figure><figure><figcaption><b>Thought leadership</b><span>The Psychology of the Media We Create · talk</span></figcaption><blockquote>“Nobody remembers the frame rate. They remember the family around the table. We don’t decorate products. We write the memories people taste them through.”</blockquote><small>Persuasive and quotable, grounded in research.</small></figure><figure><figcaption><b>Therapeutic and instructive</b><span>Coming Home to You · guided journal</span></figcaption><blockquote>“Your worth was never the thing that needed fixing. What got lost was your sense of it.”</blockquote><small>Warm, clear, clinically informed (CBT and DBT) without jargon.</small></figure><figure><figcaption><b>Luxury hospitality</b><span>Sofitel Winter Palace · guest reply sheet</span></figcaption><blockquote>“Welcome to Sofitel Winter Palace Luxor, where history whispers from every hall. Within these historic walls, every guest is royalty. Your palace life begins now.”</blockquote><small>Even a chat reply carries the brand story.</small></figure><figure><figcaption><b>Empathetic health campaign</b><span>Novartis UAE · In Your BrEaST Interest film</span></figcaption><blockquote>“Sometimes what matters most doesn’t arrive loudly. It arrives softly, waiting to be noticed.”</blockquote><small>Gentle, never fear-based, medically careful.</small></figure><figure><figcaption><b>B2B and LinkedIn</b><span>Sofitel Cairo Downtown Nile · meetings and events</span></figcaption><blockquote>“A landmark destination for a landmark gathering. The right venue makes planning easier from the very first conversation.”</blockquote><small>Confident and concise, written to win corporate inquiries.</small></figure><figure><figcaption><b>Expert video script</b><span>Iván Suárez, Spanish employment lawyer · LinkedIn video</span></figcaption><blockquote>“Did you know that in Spain, vacation days and trial periods are not just HR decisions, but strict legal obligations?”</blockquote><small>Turns legal detail into a hook a busy founder will stop for.</small></figure><figure><figcaption><b>Playful brand voice</b><span>Hawks MC Dubai and DoubleTree Mangroovy</span></figcaption><blockquote>“Resolutions? Nah. We don’t make promises; we make memories. · Plot twist: You’ve found it.”</blockquote><small>Witty, fast and social-native.</small></figure><figure><figcaption><b>Menu and brochure copy</b><span>Sofitel Cairo outlets</span></figcaption><blockquote>“La Madeleine: Cairo’s French pâtisserie pause. Le Sud: Mediterranean dining at the Nile’s widest point.”</blockquote><small>One line per venue that sells the feeling, not the menu.</small></figure></div>
+    <p style="margin-top:22px"><a href="https://substack.com/@yaraabuzaid/posts" target="_blank" rel="noopener">All my essays on Substack</a></p>
+  </div>
+</section>
+
+<section class="band alt" id="writing">
+  <div class="wrap">
+    <div class="chap"><span>Chapter six</span></div>
+    <h2>Writing in every format</h2>
+    <p class="intro">Beyond the caption: articles, guides, press, brochures, a book, a talk, poetry and songs.</p>
+    <div class="reads">
+      <div><b>Beyond the Meeting Room</b><span>LinkedIn article · what planners should check before booking a venue, Sofitel Cairo Downtown Nile.</span></div>
+      <div><b>The Planner’s Room Guide</b><span>Six-page PDF guide · 17 meeting rooms, capacities and formats, written to win corporate inquiries.</span></div>
+      <div><b>A Palace Shortlisted</b><span>Feature · Winter Palace Luxor in Historic Hotels Worldwide’s top 25: “history whispers from every stone”.</span></div>
+      <div><b><span class="ar" style="font-size:.85em">بولمان زمزم مكة يتوَّج بجائزة «أفضل معلم فندقي في مكة»</span></b><span>Arabic press release · Arabian Travel Awards win.</span></div>
+      <div><b>Six restaurants, six lines</b><span>Brochure copy for Sofitel Cairo’s outlets: “La Madeleine: Cairo’s French pâtisserie pause.”</span></div>
+      <div><b>Coming Home to You</b><span>Book · a 48-page guided journal I wrote on rebuilding self-worth.</span></div>
+      <div><b>The Psychology of the Media We Create</b><span>Talk · “Content as art. Persuasion as responsibility.” An internal talk for NTAM’s creative teams.</span></div>
+      <div><b>CRM and TV screens</b><span>Guest emails and in-room screens for Raffles, Fairmont and Swissôtel Makkah, in both languages.</span></div>
+      <div><b>Poetry and songs</b><span>I write poems and songs, and I sing them when a film, reel or jingle needs a voice: “Water Lady Yara”, “Fire painting isn’t warm”, and the song “Patterns”.</span></div>
+      <div><b>Monthly bilingual calendars</b><span>Full Arabic and English captions, hooks and visual direction for every post, every month, across a dozen hotels.</span></div>
+      <div><b>Essays on Substack</b><span>Personal essays and letters, including “A Letter to Future Me”. <a href="https://substack.com/@yaraabuzaid/posts" target="_blank" rel="noopener">Read them</a></span></div>
+      <div><b>EpicBeat and 21k readers</b><span>Creative editor at EpicBeat Magazine; my online fiction has more than 21,000 readers. I started writing at 12.</span></div>
+    </div>
+    <div class="song">
+      <figure class="phone" style="margin:0"><video src="media/patterns.mp4" poster="img/patterns.jpg" controls playsinline preload="metadata" aria-label="Patterns, a song written and sung by Yara AbuZaid"></video></figure>
+      <div>
+        <p class="kicker">Music · written and sung by me</p>
+        <h3>Patterns</h3>
+        <p style="margin-top:12px">A song about the patterns we repeat in love until we learn to see them. I write the lyrics and sing them myself, and I can do the same for a brand film, a reel or a jingle that needs an original voice.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="band">
+  <div class="wrap vo">
+    <img src="img/studio.jpg" alt="Studio monitors during a presenting session">
+    <div>
+      <p class="kicker">Voice and camera</p>
+      <h2>A voice in two languages</h2>
+      <p style="margin-top:16px">I write for the ear as much as the eye. I voiced Cipralex, a depression medication brand, in Dubai, and I’ve worked as a freelance Arabic and English voice-over artist since 2017, accents included. I also trained as a TV presenter and news anchor.</p>
+      <ul class="list">
+        <li><b>Voice-over</b><span>Cipralex (depression), Dubai · Arabic and English, with accents</span></li>
+        <li><b>On camera</b><span>TV presenting with Ahmed Salem (Al Kahera Wal Nas) and Channel 5; news anchor training at ON AIR studios and Media Production City</span></li>
+        <li><b>Directing</b><span>Director and screenwriter training at Media Production City with directors Adel Adeeb and Hazem Fouda</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="band dark" id="mind">
+  <div class="wrap psy">
+    <div>
+      <p class="kicker">The psychology behind the creative</p>
+      <blockquote>I studied media to understand how stories are told. I studied psychology to understand <em>why they matter</em>.</blockquote>
+      <p style="margin-top:26px">Before I ask what a brand should say, I ask what its audience needs to feel, understand or remember. That is how a Ramadan campaign became a journey of light, and how a breast-health brief became a conversation between women.</p>
+    </div>
+    <div class="pts">
+      <div><b>Emotional storytelling</b><span>Beyond what a brand offers, to what the experience means to the person receiving it.</span></div>
+      <div><b>Audience insight</b><span>Past demographics, to what makes a message feel relevant, trusted and worth remembering.</span></div>
+      <div><b>Memory and nostalgia</b><span>The associations that make a palace, a city or a season feel like yours.</span></div>
+      <div><b>Empathy in sensitive subjects</b><span>Healthcare and faith handled with respect, never with fear.</span></div>
+      <div><b>Leading people</b><span>Feedback, motivation and psychological safety, so teams bring their best ideas.</span></div>
+    </div>
+  </div>
+  <div class="wrap creds">
+    <div><b>Certified Professional Diploma in Psychotherapy</b><span>Canadian Board · completed 2025</span></div>
+    <div><b>Diploma in Applied Clinical Psychology</b><span>Alexandria University · 2025–2026</span></div>
+    <div><b>BA Media and Mass Communication</b><span>Arab Academy for Science and Technology · 2017–2021 · GPA 3.8</span></div>
+  </div>
+</section>
+
+<section class="band" id="approach">
+  <div class="wrap lead">
+    <div>
+      <h2>How I run a creative team</h2>
+      <p class="intro">Content Team Lead since June 2025. Management then asked me to write NTAM’s content department playbook: the workflow, responsibilities and quality standards every brief now goes through.</p>
+      <div class="steps">
+        <div><b>Strategy</b><p>Turn the business goal into a communication goal and one sharp audience insight.</p></div>
+        <div><b>Concept</b><p>One big idea per brand, judged on creativity, fit, goal, feasibility and appeal.</p></div>
+        <div><b>Words</b><p>Slogans, captions, scripts, CRM, screens and press, in each brand’s own voice.</p></div>
+        <div><b>Storyboard</b><p>Scenes, shots, timing, voice-over and on-screen text, so production has a blueprint.</p></div>
+        <div><b>On set</b><p>Direct talent, guide the photographer and videographer, protect the brand on the day.</p></div>
+      </div>
+      <div class="names" id="names"></div>
+    </div>
+    <div class="promo"><img src="img/yara.jpg" alt="NTAM promotion announcement: Yara Abu Zaid, Content Team Lead"></div>
+  </div>
+</section>
+
+<section class="band alt" id="experience">
+  <div class="wrap split">
+    <div>
+      <h2>Experience</h2>
+      <ul class="time" id="time"></ul>
+    </div>
+    <div class="edu">
+      <h3 style="margin-bottom:22px">Education and skills</h3>
+      <p><b>Certified Professional Diploma in Psychotherapy</b><br><span class="soft">Canadian Board, 2025</span></p>
+      <p><b>Diploma in Applied Clinical Psychology</b><br><span class="soft">Alexandria University, 2025–2026</span></p>
+      <p><b>BA Media and Mass Communication</b><br><span class="soft">Arab Academy for Science and Technology, 2017–2021 · media and film, minor in translation · GPA 3.8</span></p>
+      <p><b>Spanish certificate</b><br><span class="soft">Universitat Autònoma de Barcelona, 2021</span></p>
+      <p><b>Tools</b><br><span class="soft">Photoshop, Illustrator, InDesign, Premiere Pro, After Effects, camera and lighting</span></p>
+      <p><b>AI in my creative workflow</b><br><span class="soft">Generative AI (ChatGPT, Google ImageFX and AI video tools) for concept visuals, storyboards, pitch mock-ups, historical dramatisations and scratch voice-overs, plus research and first-draft exploration. Every idea, line and final edit stays human-led, brand-checked and medically or legally reviewed where needed.</span></p>
+    </div>
+  </div>
+</section>
+
+<section class="band contact" id="contact">
+  <div class="wrap">
+    <h2>Have a story that needs telling?</h2>
+    <div class="links">
+      <div><small>Email</small><span>yara.ehab825@gmail.com</span></div>
+      <div><small>Phone</small><span style="white-space:nowrap">+20 111 597 9723</span></div>
+      <a href="https://www.linkedin.com/in/yara-ehab-abuzaid-373639216/"><small>LinkedIn</small><span>yara-ehab-abuzaid</span></a>
+      <a href="https://www.behance.net/yaraehab25"><small>Behance</small><span>yaraehab25</span></a>
+      <a href="https://www.instagram.com/im.yaaraa/"><small>Instagram</small><span>@im.yaaraa</span></a>
+    </div>
+  </div>
+</section>
+
+<footer>Yara AbuZaid</footer>
+
+<script>
+{
+const frames=["ram-cover","mov-moments","wp-nile","oasis-tower","nv-woman","wp-dining","mov-light","kt-roots","pzm-lahza","oasis-view","merc-cover","hk-cover","nv-city"];
+document.getElementById("reel").innerHTML=[...frames,...frames].map(f=>`<img src="img/${f}.jpg" alt="">`).join("");
+
+const C=[
+ {h:"Sofitel Shahd Al Madinah · Rajab to Ramadan 1448",ar:"نورُها يسكُن الفؤاد",en:"Madinah’s light dwells in the heart",p:"Light grows the way the crescent grows: a thin line of longing in Rajab, a widening glow in Sha’ban, full light in Ramadan. «يسكُن» means both to dwell and to grow still.",li:[["حين يبدأ النداء","When the call begins"],["ويدنو اللقاء","When the meeting draws near"],["فيكتمل الضياء","When the light is complete"]]},
+ {h:"Pullman Zamzam Makkah · Ramadan 2026",ar:"خَيْرُ اللِّقاء",en:"The best of encounters",p:"Ramadan opens 2026, so the year starts with worship, not resolutions. The best encounter is the first sight of the Kaaba.",li:[["أقرب… أهدى… أرقى","Closer… Calmer… Elevated"]]},
+ {h:"Mövenpick Riyadh · Ramadan 2026 · two routes",img:["mov-moments","mov-light"],ar:"لَحَظَاتٌ تَبْقَى · نُورٌ يَجْمَعُنَا",en:"Moments That Stay · Light That Brings Us Closer",p:"Founding Day and the first weekend of Ramadan fell together: heritage meets reflection. Route one is about memory, route two lets Riyadh’s lights tell it visually."},
+ {h:"Mercure Makkah · Ramadan 2026",img:["merc-cover"],ar:"روح رمضان، اكتشفها في ميركيور",en:"The spirit of Ramadan. Discover it at Mercure.",p:"Calligraphy-led identity with a pattern drawn from the Kiswa’s ornament."},
+ {h:"ibis Jeddah City Center · Ramadan 2026",ar:"إفطار رمضاني يستحق المشاركة",en:"A Ramadan Iftar worth sharing",p:"Offer campaign I wrote and designed: Iftar, Suhoor and group rates."},
+ {h:"Pullman Zamzam Makkah · Hajj 2026",img:["pzm-hajj"],ar:"بقلبنا لَبَّيْنَا",en:"With our hearts, we answer",p:"Turns «لبيك اللهم لبيك» into a lived experience. Supporting lines rhyme on reversed letters: القرب and القلب.",li:[["سكينة القرب وهدى القلب","Serenity in proximity. Guidance of the heart."]]},
+ {h:"Pullman Zamzam Madina · Q2 2025",img:["pzm-lahza","pzm-hijri"],ar:"في مدينة الحبيب",en:"In the city of the Beloved",p:"A pilgrim’s journey in three months, from longing to arrival to home, linked to the Hijri New Year. Alternative route: «دفء اللقاء», the warmth of meeting.",li:[["دروب تَنتظرك","Paths that await you"],["قلوبٌ تَستقبلك","Hearts that welcome you"],["دار يرحب بك","A home that receives you"]]},
+ {h:"Fairmont, Raffles and Swissôtel Makkah · Ramadan screens",ar:"نسأل الله أن يغمركم بالسكينة، ويملأ قلوبكم نورًا وطمأنينة",en:"May this sacred month surround you with serenity and fill your heart with divine light.",p:"Four hotels, four greetings, each in its brand’s register."},
+ {h:"Sofitel Cairo Downtown Nile · Ramadan",ar:"",en:"Listen. Answer. Win.",p:"A Ramadan radio competition with Nogoum FM: winners announced in stories, Iftar for two by the Nile."}
+];
+document.getElementById("camps").innerHTML=C.map(c=>`<article class="camp">${c.img?`<div class="pics">${c.img.map(i=>`<img src="img/${i}.jpg" alt="${c.h} visual" loading="lazy">`).join("")}</div>`:""}<div class="bd"><span class="who2">${c.h}</span>${c.ar?`<span class="sl">${c.ar}</span>`:""}<span class="en">${c.en}</span><p>${c.p}</p>${c.li?`<ul>${c.li.map(l=>`<li><span class="ar">${l[0]}</span> · <span class="soft">${l[1]}</span></li>`).join("")}</ul>`:""}</div></article>`).join("");
+
+const S=[
+ ["ar","نور في كل خطوة","Light in every step","Sofitel Shahd Al Madinah · award winner",1],
+ ["ar","نورُها يسكُن الفؤاد","Madinah’s light dwells in the heart","Sofitel Shahd Al Madinah · 1448"],
+ ["ar","خَيْرُ اللِّقاء","The best of encounters","Pullman Zamzam Makkah"],
+ ["ar","خيرُ الزمان وقُربُ المكان في بولمان زمزم مكة","The best of times, the nearest of places","Pullman Zamzam Makkah · Q1 2026"],
+ ["ar","أيادٍ تدعي وتُبدع","Hands that pray and create","Pullman Zamzam Makkah · Ramadan × Year of Handicrafts"],
+ ["ar","بقلبنا لَبَّيْنَا","With our hearts, we answer","Pullman Zamzam Makkah · Hajj"],
+ ["ar","لَحَظَاتٌ تَبْقَى","Moments that stay","Mövenpick Riyadh"],
+ ["ar","نُورٌ يَجْمَعُنَا","Light that brings us closer","Mövenpick Riyadh"],
+ ["ar","روح رمضان، اكتشفها في ميركيور","The spirit of Ramadan, discover it at Mercure","Mercure Makkah"],
+ ["ar","في مدينة الحبيب","In the city of the Beloved","Pullman Zamzam Madina"],
+ ["ar","دفء اللقاء","The warmth of meeting","Pullman Zamzam Madina"],
+ ["ar","في رحاب المدينة… نورٌ وسكينة","In the embrace of Madinah, light and serenity","Sofitel Shahd Al Madinah"],
+ ["ar","استشعر خيرَ الجوار… في مدينة الأنوار","Feel the grace of nearness, in the city of light","Sofitel Shahd Al Madinah"],
+ ["ar","حكايات تنير القلب","Tales lighting up the heart","Sofitel Shahd Al Madinah · activation"],
+ ["ar","روحانيات تغمرك وفخامة تأسرك","Spirituality that embraces you, luxury that captivates you","Dar Al Taqwa"],
+ ["ar","كسبناها! الأخضر بطل كأس الخليج","We won! The Green Falcons are Gulf Cup champions","Radisson Riyadh Airport"],
+ ["ar","حلّي لحظاتك على كيفك!","Sweeten the moment.","After Eleven, Adagio Jeddah"],
+ ["ar","سلامتك هنا… موثّقة بمعايير عالمية","Your safety here, certified to global standards","Novotel Thakher Makkah · Safehotels"],
+ ["en","","Your Oasis… Your Rhythm.","Sofitel Cairo Nile El Gezirah",1],
+ ["en","","One place. Different worlds.","Sofitel Cairo Nile El Gezirah"],
+ ["en","","History is not preserved. It is lived.","Sofitel Winter Palace Luxor"],
+ ["en","","Every corner tells a story.","Winter Palace documentary"],
+ ["en","","Cairo might sleep early… but we don’t.","Sofitel Cairo Nile El Gezirah"],
+ ["en","","Great events don’t just happen. They’re engineered.","Sofitel Cairo Downtown Nile"],
+ ["en","","The World’s Largest Sofitel. Hosting the Future of Hospitality.","Sofitel Cairo Downtown Nile"],
+ ["en","","Your Home Wrapped in Opulence","Dar Al Taqwa"],
+ ["en","","And we’re rolling!","Hawks MC Dubai"],
+ ["en","","Your Key to Life","Keytruda"],
+ ["en","","One small change. A different world.","Keytruda"],
+ ["en","","Illuminating Minds.","Lundbeck"],
+ ["en","","Lead the Way Out","Lundbeck"],
+ ["en","","Harmony Begins with Connection.","Lundbeck"],
+ ["en","","Let the Lights Guide You to a Magical Winter","Mövenpick Riyadh"],
+ ["en","","Sip. Relax. Repeat.","After Eleven"],
+ ["es","","Contigo, siempre.","Spain’s national health system · With you, always"],
+ ["es","","Compartimos mucho más.","Spain’s national health system · We share much more"]
+];
+document.getElementById("slw").innerHTML=S.map(s=>`<div class="sg${s[4]?' big':''}">${s[0]==="ar"?`<span class="ar">${s[1]}</span><span class="soft" style="font-size:16px">${s[2]}</span>`:s[0]==="es"?`<span class="es">${s[2]}</span>`:`<span class="en">${s[2]}</span>`}<small>${s[3]}</small></div>`).join("");
+
+const lines=[["Light in every step",0],["نور في كل خطوة",1],["Your Oasis… Your Rhythm.",0],["خَيْرُ اللِّقاء",1],["Moments that stay",0],["بقلبنا لَبَّيْنَا",1],["Every corner tells a story",0],["نورُها يسكُن الفؤاد",1],["And we’re rolling!",0],["كسبناها!",1]];
+const L=lines.map(l=>`<span${l[1]?' class="ar"':''}>${l[0]}</span><i>✦</i>`).join("");
+document.getElementById("lines").innerHTML=L+L;
+
+const V=[
+ ["Spiritual","emo","Sofitel Shahd Al Madinah","The call to prayer from Al-Masjid Al-Nabawi, the hush before Iftar, the taste of dates breaking your fast, it’s a Ramadan story that never fades.","صوت الأذان من المسجد النبوي الشريف، مع لحظات السكون قبل الإفطار، ولذة التمر بعد الصيام.. هذه حكاية رمضانية تبقى في الذاكرة.","Ramadan post"],
+ ["Nostalgia","emo","Sofitel Winter Palace Luxor","In the heart of Luxor, where golden sunsets dance on the Nile and history whispers from every stone, stands a palace that has been a stage for greatness and majesty.","","Award feature"],
+ ["Empathy","emo","Novartis UAE","Why do some things stay with us? Sometimes, it is because someone cared enough to share them. A quiet reminder from a mother, a question from a friend.","","Breast-health teaser"],
+ ["Romance","emo","Sofitel Cairo Downtown Nile","When was the last time you escaped the world, together?","","Spa reel"],
+ ["Family joy","emo","Mövenpick Riyadh","You know it is a good summer day when the kids are busy laughing, playing, and asking for “just one more game.”","تعرف أن اليوم الصيفي كان ممتعاً عندما ينشغل أطفالك بالضحك واللعب، ويطلبون “اللعب أكثر” قبل المغادرة.","Splash &amp; Play launch"],
+ ["Inclusion","emo","Mövenpick Riyadh","Let’s celebrate Infinite Minds! This World Autism Awareness Day, we wear blue in support of a world that values every mind.","نحتفي اليوم بتنوّع العقول واختلافها!","LinkedIn post"],
+ ["FOMO","bold","Sofitel Cairo Nile El Gezirah","Cairo might sleep early… but we don’t. After 9 PM, when the city slows, Sofitel Cairo Nile El Gezirah becomes your destination where the lights stay on, the tables stay set, and the night continues with effortless elegance by the Nile.","","CGI reel"],
+ ["Humour","bold","Hawks MC Dubai","And just like that, 2025 kicks off with a bang! New Year, same HAWKS, fueled by adrenaline and exciting adventures. Resolutions? Nah. We don’t make promises; we make memories.","","New Year post"],
+ ["Craving, local slang","bold","After Eleven, Adagio Jeddah","Sweeten the moment. Good food. Great mood. Sip. Relax. Repeat.","حلّي لحظاتك على كيفك! · برجر يضبط مزاجك! · انتعاش على مزاجك!","Offer visuals"],
+ ["Indulgence","bold","Sofitel Cairo Downtown Nile","Warning: Your next obsession is on this menu.","","Oak Grill story"],
+ ["National pride","bold","Radisson Riyadh Airport","WE WON! The Green Falcons are Gulf Cup Champions.","كسبناها! الأخضر بطل كأس الخليج.","Gulf Cup post"],
+ ["Practical value","rat","ibis Jeddah City Center","The right Suhoor changes your whole day.","السحور يؤثر على يومك بالكامل.","Suhoor offer"],
+ ["Trust and safety","rat","Novotel Thakher Makkah","Your safety here, certified to global standards.","سلامتك هنا… موثّقة بمعايير عالمية.","Safehotels certification"],
+ ["Authority","rat","Pullman Zamzam Makkah","Every award carries a story of trust and commitment.","وراء كل جائزة حقيقية، حكاية من الثقة والالتزام.","Award announcement"],
+ ["Rational, B2B","rat","Sofitel Cairo Downtown Nile","Great events don’t just happen. They’re engineered. The right room. The right setup. Every technical detail working behind the scenes.","","LinkedIn post"],
+ ["Expert curiosity","rat","Iván Suárez, employment lawyer","Did you know that in Spain, vacation days and trial periods are not just HR decisions, but strict legal obligations?","","Reel hook"]
+];
+const F=[["all","All appeals"],["emo","Emotional"],["bold","Bold and playful"],["rat","Rational and trust"],["ar","With Arabic"]];
+const chips=document.getElementById("chips"),vl=document.getElementById("vlist");
+chips.innerHTML=F.map((f,i)=>`<button type="button" id="f-${f[0]}" data-f="${f[0]}" aria-pressed="${i?'false':'true'}">${f[1]}</button>`).join("");
+vl.innerHTML=V.map(v=>`<article class="v" data-k="${v[1]}" data-ar="${v[4]?1:0}"><div class="t"><b>${v[0]}</b><span>${v[2]}</span></div><p class="en" style="margin:0">“${v[3]}”</p>${v[4]?`<p class="ar arx" style="margin:0">${v[4]}</p>`:""}<small>${v[5]}</small></article>`).join("");
+chips.addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;const f=b.dataset.f;
+ chips.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",x===b?"true":"false"));
+ vl.querySelectorAll(".v").forEach(c=>{c.hidden=!(f==="all"||(f==="ar"?c.dataset.ar==="1":c.dataset.k===f))});});
+
+const LB=[["lb-align", "Aligning Signals. Advancing Treatment.", "The cosmic web: neurotransmitters as stars that align", "Stars are neurotransmitters; the cosmic web is brain connectivity. “When the stars align”, separate signals reveal a greater pattern, and the line moves from science to treatment decisions."], ["lb-illum", "Illuminating Connections.", "Lundbeck’s star as the light of scientific understanding", "Double meaning of light: Lundbeck’s star is the source of scientific understanding, and the lit neural paths show the medication’s mechanism and how it lights up the patient’s life."], ["lb-puzzle", "Every Connection Matters.", "The puzzle: every piece completes the picture", "Depression, bipolar disorder and schizophrenia involve many interacting circuits. Each puzzle piece is one element of the picture, so understanding comes from how the pieces connect."], ["lb-prism", "Connecting Pathways, Transforming Lives", "The prism: one beam of science, three distinct disorders", "One beam of knowledge refracted into three spectrums: three disorders with distinct clinical needs, united by one purpose."], ["lb-data", "Decoding What Connects", "The brain as a data system, decoded", "The brain and a computer both process signals through networks. Three circuit pathways stand for the three disorders, with treatment shown as targeted interactions."], ["lb-planets", "Bringing Their Light Back", "Each disorder feels like a planet of its own", "Each disorder can feel like a planet of its own: dark, isolated, out of reach. The star brings light back, from scientific progress to quality of life."], ["lb-minds", "Illuminating Minds.", "Mind trap: science opening a way out", "Being trapped inside your own mind. Illuminating speaks to the science; Minds brings it back to the person behind it."], ["lb-maze", "Lead the Way Out", "Maze and ghosts: clinicians as guides", "For people living with mental illness even familiar days can feel like a maze. The psychiatrist is the guide; Lundbeck and NewBridge support that role."], ["lb-harmony", "Harmony Begins with Connection.", "Life has a rhythm; care helps find it again", "Life has a rhythm, and mental illness makes it harder to find. Understanding the brain’s connections opens a conversation with the person’s life at its heart."]];
+document.getElementById("lbg").innerHTML=LB.map(l=>`<figure><img src="img/${l[0]}.jpg" alt="Lundbeck territory: ${l[1]}" loading="lazy"><figcaption><b>${l[1]}</b><span>${l[2]}</span><span class="lbr"><strong>Rationale.</strong> ${l[3]}</span></figcaption></figure>`).join("");
+const DT=[["dt-kids","Reel","Their holiday. Their rules.","Every day brings a new discovery, turning family time into memories they’ll talk about for years to come. This World Children’s Day, let the little adventurers call the shots."],
+["dt-serene","Post","A serene escape","Framed by lush palms, shimmering pools, and contemporary architecture overlooking the Red Sea. Discover the quieter side."],
+["dt-glam","Post","A change of scenery, a little glamour","…and a setting worth lingering in. Colorful surroundings, refreshing drinks and an inviting atmosphere make every moment special."],
+["dt-wedding","Carousel","Let us curate your ever after.","Your dream beach wedding begins with the right setting, the right team, and a celebration that feels unmistakably yours. Swipe through to discover our wedding packages."],
+["dt-romantic","Reel","Seafood, Surf &amp; Turf, Sushi. What’s winning you over?","Three curated menus and an evening worth dressing up for: our Romantic Dinner Set Menus."],
+["dt-scenery","Post","Plans? Switched.","Sometimes, all it takes is a change of scenery to make the weekend feel entirely different. Poolside afternoons, new surroundings, and nowhere else you need to be."],
+["dt-sayyes","Reel","Say YES","Not every getaway follows the usual plans. Some turn into a weekend by the sea, an evening worth dressing up for, or a celebration that brings everyone together."],
+["dt-begin","Post","Check in. Dive in. Make memories together.","From sun-soaked pool days to playful splashes and moments of togetherness, every day brings families closer."],
+["dt-rightho","Post","You booked the right hotel","Some of the best scenes are the quiet ones. Curtains open. Nowhere you’d rather go."],
+["dt-venue","Post","Why say YES to this wedding venue?","An artful open-air pavilion overlooking the Red Sea, stunning décor and refined styling, for a wedding that feels graceful and effortless."],
+["dt-plot","Post","Plot twist: You’ve found it.","Leisure and discovery meet effortlessly, giving you a balanced stay that feels as full or as unhurried as you want it to be."],
+["dt-vacation","Reel","Vacation: on","When the day is this much fun, there’s no time for the snooze button. Come for the fun, stay for the feeling."]];
+document.getElementById("igg").innerHTML=DT.map(d=>`<img src="img/${d[0]}.jpg" alt="DoubleTree post: ${d[2]}">`).join("");
+document.getElementById("dtc").innerHTML=DT.map(d=>`<figure class="dp"><img src="img/${d[0]}.jpg" alt="DoubleTree ${d[1].toLowerCase()}: ${d[2]}" loading="lazy"><figcaption><small>${d[1]}</small><b>${d[2]}</b><span>${d[3]}</span></figcaption></figure>`).join("");
+const SN=[
+ ["2026","96th National Day","",[
+  [null,"Reel · celebration","من قلب مكة المكرمة، نرفع راية الفخر بوطنٍ عزّه بطبعه، وأصالته هويته، وطموحه امتداده.","From the heart of Makkah, we proudly raise the flag for a nation whose pride is in its nature."],
+  [null,"Reel · activations","في زمزم بولمان مكة، نحتفي هذا العام باليوم الوطني السعودي بأجواءٍ مستوحاة من روح المملكة وتراثها… ونترك لبقية اللحظات أن تحكي الحكاية.","Here’s a glimpse of our celebrations; we’ll let the rest of the moments tell the story."],
+  [null,"Reel · recap teaser","نستعيد معكم اليوم بعضاً من لحظات ذلك الاحتفال، حيث اجتمعنا لنحتفي بالوطن.","Last year we brought the spirit of Saudi National Day to life; today we relive it with you."]]],
+ ["2025","95th National Day","Saudi Year of Handicrafts",[
+  ["sn25-roots","Static · series 1 of 3","من جذورنا الأصيلة انطلقت رؤيتنا، وفي يوم الوطن، نرفع رؤوسنا فخرًا بما بلغناه من مجد وعز.","From our deep-rooted heritage, our vision was born."],
+  ["sn25-vision","Static · series 2 of 3","الطموح في رؤيتنا، والمجد في مسيرتنا. في يومنا الوطني، نحتفل بأصالة لا تزول، وفخر لا ينتهي.","Ambition shapes our vision, and glory marks our journey."],
+  ["sn25-city","Static · series 3 of 3","ما بين الطيب والفزعة، وبين الطموح والمجد، نكتب قصة وطن. وكل عامٍ وعزّنا من طبعنا.","Between generosity and solidarity, between ambition and glory, we write the story of a nation."]]],
+ ["2024","94th National Day","",[
+  ["sn24-tower","Static · greeting","وطننا قصة نجاح. حلمنا، بنينا، وحصدنا.","Our nation is a story of success. Together, we dreamed, built, and reaped.",1],
+  ["sn24-chef","Static · event invitation","احتفالات رائعة وفعاليات مميزة تنتظرك في اليوم الوطني السعودي… لنصنع معًا ذكريات تدوم طويلًا.","Exciting celebrations await you this Saudi National Day.",1],
+  ["sn24-quiz","Static · competition","شارك واربح! قسيمة مجانية لتذوق أشهى النكهات. من هو مؤسس المملكة العربية السعودية؟","Answer, like and follow to win lunch or dinner for two.",1]]]
+];
+document.getElementById("sny").innerHTML=SN.map(y=>`<div class="syr"><div class="y">${y[0]}<small>${y[1]}${y[2]?'<br>'+y[2]:''}<br>Pullman Zamzam Makkah</small></div><div class="sgrid">${y[3].map(p=>`<figure class="sp${p[4]?' sq':''}${p[0]?'':' txt'}">${p[0]?`<img src="img/${p[0]}.jpg" alt="Pullman Zamzam Makkah National Day ${y[0]}: ${p[3]}" loading="lazy">`:''}<figcaption><small>${p[1]}</small><span class="ar">${p[2]}</span><span class="en">${p[3]}</span></figcaption></figure>`).join("")}</div></div>`).join("")+`<div class="syr"><div class="y" style="font-size:40px">Across Accor<small>Other hotels, same season</small></div><div class="sgrid">${[["Adagio Jeddah City Center · 2025 event","تراث في كل نغمة… ومتعة في كل لحظة","Heritage in every note, joy in every moment: live qanun, caricature art and a heritage photo corner."],["Makkah Clock Royal Tower · 2026 screens","احتفالٌ يمتدّ مع إقامتكم","A celebration that extends with your stay: three in-room screens and offers."],["Sofitel Shahd Al Madinah · 2026 recap reel","عامٌ مضى، وما زالت تفاصيله حيّة بين أروقتنا","A year has passed, and its details still live in our halls."]].map(c=>`<figure class="sp txt"><figcaption><small>${c[0]}</small><span class="ar">${c[1]}</span><span class="en">${c[2]}</span></figcaption></figure>`).join("")}</div></div>`;
+{const c=document.getElementById("crs");c.innerHTML=[1,2,3,4,5,6].map(i=>`<img src="img/td-${i}.jpg" alt="Tone-deaf campaigns carousel, slide ${i} of 6" loading="lazy">`).join("");const n=document.getElementById("crn");const go=d=>c.scrollBy({left:d*c.clientWidth,behavior:"smooth"});document.getElementById("crp").onclick=()=>go(-1);document.getElementById("crx").onclick=()=>go(1);c.addEventListener("scroll",()=>{n.textContent=(Math.round(c.scrollLeft/c.clientWidth)+1)+" / 6"});}
+const SB=[["wp-nile","Opening: the palace on the Nile, golden hour"],["wp-stair","Arrival on the grand staircase"],["wp-tea","Service through the eras"],["wp-dining","Dinner in the 1886 restaurant"],["wp-paper","“Howard Discovers All”"],["wp-writer","Agatha Christie in the library"],["wp-chef","The kitchen, a hidden theatre"],["wp-camera","The shutter that jumps time"]];
+document.getElementById("sb").innerHTML=SB.map(s=>`<figure><img src="img/${s[0]}.jpg" alt="Storyboard: ${s[1]}" loading="lazy"><figcaption>${s[1]}</figcaption></figure>`).join("");
+
+const BEST=[{"i": 15, "a": "Fairmont Makkah Clock Royal Tower", "u": "https://www.instagram.com/fairmontmakkah/reel/DdOKtigCVYE/", "l": 1058, "d": "Sep 2026", "r": 1, "c": "﴿إِنَّ أَوَّلَ بَيْتٍ وُضِعَ لِلنَّاسِ لَلَّذِي بِبَكَّةَ مُبَارَكًا﴾"}, {"i": 0, "a": "Pullman ZamZam Makkah", "u": "https://www.instagram.com/pullmanmakkah/reel/Dds-8xKDfqH/", "l": 796, "d": "Sep 2026", "r": 1, "c": "في كل لحظةٍ من العمرة، تملأ قلبك سكينةٌ لا تشبه سواها."}, {"i": 6, "a": "Sofitel Shahd Al Madinah", "u": "https://www.instagram.com/sofitelshahdalmadinah/reel/DZenflMAi_d/", "l": 770, "d": "Jun 2026", "r": 1, "c": "المدينة بعد الحج… سكينةٌ تكتمل بها الرحلة."}, {"i": 12, "a": "Swissôtel Al Maqam Makkah", "u": "https://www.instagram.com/swissotelalmaqammakkah/p/Dd0tLJuF2-M/", "l": 594, "d": "Sep 2026", "r": 0, "c": "حين تكون سهولة الوصول أولوية، يصبح سويس أوتيل المقام مكة خيارًا مثاليًا للعائلة."}, {"i": 13, "a": "Swissôtel Al Maqam Makkah", "u": "https://www.instagram.com/swissotelalmaqammakkah/reel/DeGkHyCDSis/", "l": 521, "d": "Oct 2026", "r": 1, "c": "سلام وطمأنينة من أطهر بقاع الأرض."}, {"i": 1, "a": "Pullman ZamZam Makkah", "u": "https://www.instagram.com/pullmanmakkah/reel/Da5G-0tFRdq/", "l": 465, "d": "Jul 2026", "r": 1, "c": "مع كل خطوة تخطوها في الطواف، يتنزّل على قلبك طمأنينة وسلام."}, {"i": 14, "a": "Swissôtel Al Maqam Makkah", "u": "https://www.instagram.com/swissotelalmaqammakkah/reel/DeEcf5FAEhu/", "l": 464, "d": "Oct 2026", "r": 1, "c": "تجربة إقامة راقية ولحظات مميزة في قلب مكة."}, {"i": 16, "a": "Fairmont Makkah Clock Royal Tower", "u": "https://www.instagram.com/fairmontmakkah/p/DfUitaEDFiw/", "l": 344, "d": "Nov 2026", "r": 0, "c": "في رحاب مكة المكرمة، تكتمل فرحة اللقاء وتُصنع ذكريات لا تُنسى."}, {"i": 17, "a": "Fairmont Makkah Clock Royal Tower", "u": "https://www.instagram.com/fairmontmakkah/reel/DeegsnuE4Da/", "l": 340, "d": "Oct 2026", "r": 1, "c": "للعودة إلى مكة شعورٌ لا يشبه أي رحلة أخرى."}, {"i": 7, "a": "Sofitel Shahd Al Madinah", "u": "https://www.instagram.com/sofitelshahdalmadinah/p/DfKG4ivicLq/", "l": 242, "d": "Oct 2026", "r": 0, "c": "هناك مدن نعرفها بمعالمها، ومدن نتذكرها بالشعور الذي تركته فينا."}, {"i": 8, "a": "Sofitel Shahd Al Madinah", "u": "https://www.instagram.com/sofitelshahdalmadinah/p/De1FCMoCRuc/", "l": 210, "d": "Oct 2026", "r": 0, "c": "حين تلتقي الأناقة الفرنسية بدفء المدينة المنوّرة، تولد تفاصيلٌ لا تحتاج إلى تعريف."}, {"i": 3, "a": "Pullman ZamZam Madina", "u": "https://www.instagram.com/pullmanmadina/reel/Debn4sTDUoK/", "l": 171, "d": "Oct 2026", "r": 1, "c": "لعلّ أكثر ما اشتقتم إليه هو صباحٌ كهذا في المدينة."}, {"i": 2, "a": "Pullman ZamZam Makkah", "u": "https://www.instagram.com/pullmanmakkah/reel/DbiM9u4Ex-c/", "l": 166, "d": "Aug 2026", "r": 1, "c": "خطواتٌ قليلة تفصلكم عن الحرم، لتشهدوا صلاة الفجر من الصفوف الأولى."}, {"i": 4, "a": "Pullman ZamZam Madina", "u": "https://www.instagram.com/pullmanmadina/p/DdtesCbCZzh/", "l": 166, "d": "Sep 2026", "r": 0, "c": "من المدينة المنورة، تبدأ إقامةٌ صُمّمت لتجعل رحلتك أكثر سلاسة وراحة."}, {"i": 5, "a": "Pullman ZamZam Madina", "u": "https://www.instagram.com/pullmanmadina/reel/DcyjrUdiajY/", "l": 138, "d": "Sep 2026", "r": 1, "c": "تأتي شوقًا… لتعود بقلبٍ مختلف."}, {"i": 9, "a": "Mövenpick Riyadh", "u": "https://www.instagram.com/movenpickriyadh/p/Dc0cKeCjXOW/", "l": 29, "d": "Sep 2026", "r": 0, "c": "مهما كانت خطتك... يلا موفنبيك!"}, {"i": 10, "a": "Mövenpick Riyadh", "u": "https://www.instagram.com/movenpickriyadh/reel/DcToNbeipgK/", "l": 29, "d": "Aug 2026", "r": 1, "c": "إذا كنت تحب تكتشف مطابخ جديدة... ابدأ بالمغرب!"}, {"i": 11, "a": "Mövenpick Riyadh", "u": "https://www.instagram.com/movenpickriyadh/p/DdgWiCilCNF/", "l": 28, "d": "Sep 2026", "r": 0, "c": "قهوة مجانية لكل من وُلد عام 1996، أو ينتهي رقم جوالك أو هويتك بـ 96."}];
+document.getElementById("bestg").innerHTML=BEST.map(b=>`<a class="bp" href="${b.u}" target="_blank" rel="noopener"><div class="im"><img loading="lazy" src="img/best-${b.i}.jpg" alt="${b.a} post"><span class="ty">${b.r?"Reel":"Post"}</span><span class="lk">♥ ${b.l.toLocaleString("en")}</span></div><div class="bd"><span class="ac">${b.a}</span><p class="cp">${b.c}</p><span class="dt">${b.d}</span></div></a>`).join("");
+const LIVE=[{"g": "pm", "id": "DGpqP9Yic95", "acct": "Pullman ZamZam Makkah", "date": "Mar 2025", "tag": "Ramadan × Year of Handicrafts", "media": [["v", 0]], "ar": "أَيَادٍ تَدعي وتُبدع لتروي حكايات المجد وتُخلد روحانيات الشهر.", "en": "Hands that pray and create, weaving tales of glory while capturing the sacred spirit of the holy month.", "note": "Saudi Arabia’s Year of Handicrafts fell in Ramadan, so I married the two: one idea, “hands that pray and create”, linking artisans’ crafts to worship. I wrote the concept, the calendar, the script and the bilingual captions."}, {"g": "pm", "id": "DHQSDvKteGu", "acct": "Pullman ZamZam Makkah", "date": "Mar 2025", "tag": "Ramadan × #كل_حرفة_قصة", "media": [["v", 0]], "ar": "كل يدٍ ترتفع بالدعاء، أو تمتد بالعطاء، يُكتب لها أجر.", "en": "Every hand that rises in prayer or reaches out in giving is rewarded.", "note": "The second chapter of the same concept, moving from craft to generosity. Same hands motif, new emotional beat."}, {"g": "pm", "id": "DUyJ5A4E3tX", "acct": "Pullman ZamZam Makkah", "date": "Feb 2026", "tag": "Ramadan 2026 booking reel", "media": [["v", 0]], "ar": "ما الذي يترك أثر في قلوبنا؟", "en": "What lingers in our hearts the longest?", "note": "Opens on a question, answers with feeling, then closes on the booking line. Emotion first, sell second."}, {"g": "pm", "id": "DVDZyaPgqHw", "acct": "Pullman ZamZam Makkah", "date": "Feb 2026", "tag": "Saudi Founding Day", "media": [["v", 0]], "ar": "في يوم التأسيس السعودي، فخرٌ يتجدّد، وعطاءٌ لا ينتهي.", "en": "On Saudi Founding Day, pride is renewed and generosity endures.", "note": "A national story told through the hotel’s values: faith, knowledge and dedication, scripted and captioned in both languages."}, {"g": "pm", "id": "DYeIjZ0lvug", "acct": "Pullman ZamZam Makkah", "date": "May 2026", "tag": "Hajj 2026 · بقلبنا لبينا", "media": [["i", 0]], "ar": "اجعل كل خطوة أكثر يقينًا وراحة.", "en": "Make every step clearer and more at ease.", "note": "Part of my Nusuk-led Hajj concept: a step-by-step rituals guide with a QR code, so the hotel becomes useful before it sells."}, {"g": "pm", "id": "DLEytyeJcEQ", "acct": "Pullman ZamZam Madina", "date": "Jun 2025", "tag": "Madinah moments", "media": [["v", 0]], "ar": "هل شاهدت قباب المسجد النبوي وهي تفتح؟", "en": "Have you seen the sliding domes of Al-Masjid An-Nabawi?", "note": "A curiosity hook built on a real spectacle guests can see from the hotel."}, {"g": "sc", "id": "DYM3GtpiCgD", "acct": "Sofitel Cairo Nile El Gezirah", "date": "May 2026", "tag": "Carousel · Your Sofitel Oasis", "media": [["i", 0], ["i", 1], ["i", 2], ["i", 3], ["i", 4], ["i", 5]], "en": "Refined, intimate and impossible to replicate.", "note": "A carousel of small promises (“Stay in longer”, “Order one more coffee”, “Watch the sunset twice”) that turns the hotel into permission to slow down."}, {"g": "sc", "id": "DXr0ZoqmJD1", "acct": "Sofitel Cairo Nile El Gezirah", "date": "Spring 2026", "tag": "Carousel · Spring at Sofitel", "media": [["i", 0], ["v", 1], ["i", 2], ["i", 3]], "en": "This is what spring looks like when you choose right.", "note": "Spring campaign: fresh plates, fun dates and soothing moments, with a motion slide inside the carousel."}, {"g": "sc", "id": "DYW1wVgDVpM", "acct": "Sofitel Cairo Nile El Gezirah", "date": "2026", "tag": "Carousel · leisure stay", "media": [["i", 0], ["i", 1], ["i", 2], ["i", 3], ["i", 4], ["i", 5]], "en": "Any day is a good day for this leisure stay!", "note": "“This & …” series: one repeated device across six frames, from breakfast in bed to Sofitel MyBed comfort."}, {"g": "sc", "id": "Dbm-k6uxIQR", "acct": "Sofitel Cairo Nile El Gezirah", "date": "Jul 2026", "tag": "Reel · in-room dining", "media": [["v", 0]], "en": "Some cravings arrive after the city goes quiet.", "note": "A late-night mood line for in-room dining."}, {"g": "sc", "id": "DcveV-sCNO9", "acct": "Sofitel Cairo Nile El Gezirah", "date": "Sep 2026", "tag": "Reel · poolside", "media": [["v", 0]], "en": "Think of a poolside oasis that feels like a resort getaway without leaving Cairo.", "note": "The staycation pitch in one sentence, for Cairo’s summer audience."}, {"g": "dt", "id": "Del2CsiE1t4", "acct": "DoubleTree by Hilton Mangroovy El Gouna", "date": "2026", "tag": "Carousel · friends’ getaway", "media": [["v", 0], ["v", 1], ["v", 2]], "en": "Every Gouna escape deserves the right company.", "note": "Three split-screen motion slides (the scene, the experience) built around one call to action: “Tag your getaway crew.”"}, {"g": "dt", "id": "DeG8kqijXpT", "acct": "DoubleTree by Hilton Mangroovy El Gouna", "date": "2026", "tag": "Reel · couples", "media": [["v", 0]], "en": "Looking for the escape you both deserve?", "note": "A couples reel paced like a slow evening: sunset, dinner, intimacy. The question hook does the selling."}, {"g": "dt", "id": "DcqP6rAgTAe", "acct": "DoubleTree by Hilton Mangroovy El Gouna", "date": "2026", "tag": "Reel · unwind", "media": [["v", 0]], "en": "Your way to unwind, our way to embrace it.", "note": "A parallel line that hands the guest control, then shows the resort making room for it."}, {"g": "dt", "id": "", "acct": "DoubleTree by Hilton Mangroovy El Gouna", "date": "Nov 2026", "tag": "Static · architecture", "media": [["x", "dt-serene.jpg"]], "en": "A serene escape framed by lush palms, shimmering pools, and contemporary architecture overlooking the Red Sea.", "note": "“Discover the quieter side”: positioning the resort for guests who want calm, not crowds."}];
+const lpHTML=p=>{const tall=p.media.length===1&&p.media[0][0]==="v"||p.id==="DYeIjZ0lvug"?(p.id==="DYeIjZ0lvug"?"":" tall"):"";const items=p.media.map(([t,k])=>t==="x"?`<img loading="lazy" src="ig/${k}" alt="${p.acct} post">`:t==="v"?`<video src="ig/${p.id}-${k}.mp4" poster="ig/${p.id}-${k}.jpg" controls playsinline preload="none"></video>`:`<img loading="lazy" src="ig/${p.id}-${k}.jpg" alt="${p.acct} post, slide ${k+1}">`).join("");const multi=p.media.length>1;return `<article class="lp" data-i="0"><div class="mv${tall}"><span class="tg">${p.tag}</span><div class="trk">${items}</div>${multi?`<button class="nb p" aria-label="Previous slide">‹</button><button class="nb n" aria-label="Next slide">›</button><div class="dots">${p.media.map((_,i)=>`<i class="${i?"":"on"}"></i>`).join("")}</div>`:""}</div><div class="bd"><span class="ac">${p.acct} · ${p.date}</span>${p.ar?`<p class="ar">${p.ar}</p>`:""}<p class="en">${p.en}</p><p class="nt">${p.note}</p><a class="lk" href="${p.id?`https://www.instagram.com/p/${p.id}/`:"https://www.instagram.com/doubletreebyhiltonmangroovy/"}" target="_blank" rel="noopener">Open on Instagram</a></div></article>`};
+document.getElementById("liveA").innerHTML=LIVE.filter(p=>p.g==="pm").map(lpHTML).join("");
+document.getElementById("liveB").innerHTML=LIVE.filter(p=>p.g==="sc").map(lpHTML).join("");
+document.getElementById("liveC").innerHTML=LIVE.filter(p=>p.g==="dt").map(lpHTML).join("");
+document.querySelectorAll(".lp").forEach(c=>{const trk=c.querySelector(".trk"),n=trk.children.length;const go=d=>{let i=(+c.dataset.i+d+n)%n;c.dataset.i=i;trk.style.transform=`translateX(-${i*100}%)`;c.querySelectorAll(".dots i").forEach((x,j)=>x.classList.toggle("on",j===i));trk.querySelectorAll("video").forEach(v=>v.pause())};const p=c.querySelector(".nb.p"),q=c.querySelector(".nb.n");if(p){p.onclick=()=>go(-1);q.onclick=()=>go(1)}});
+const ARC=[["p05", "Galaxy", "Influencer campaign", "inf"], ["p06", "Iram Jewelry", "Influencer campaign · caption and video", "inf"], ["p07", "Oxi Arabia", "Influencer campaign", "inf"], ["p27", "Johnson’s Wipes", "Halloween ad", "inf"], ["p37", "Ablo app", "App campaign", "inf"], ["p08", "Fallacy", "Awareness campaign for my film: filter bubbles", "film"], ["p09", "TIME Coral Nuweiba Resort", "Egypt · social content", "hosp"], ["p10", "TIME Coral Nuweiba Resort", "Paradise untouched · summer offer", "hosp"], ["p11", "TIME Coral Nuweiba Resort", "Destination posts", "hosp"], ["p12", "TIME Express Hotel Sharjah", "UAE · bilingual calendar", "hosp"], ["p13", "TIME Express Hotel Sharjah", "Rooms: “Your space for peace”", "hosp"], ["p14", "TIME Express Hotel Sharjah", "Coffee: “Rejoice coffee”", "hosp"], ["p16", "TIME Express Hotel Sharjah", "Wellness and stays", "hosp"], ["p18", "Mirage Sidi Abd El Rahman", "North Coast, Egypt · engagement posts", "hosp"], ["p20", "Mirage Sidi Abd El Rahman", "Rooms and views", "hosp"], ["p21", "Mirage Sidi Abd El Rahman", "“Enjoy it to the max!”", "hosp"], ["p22", "Swissôtel Al Maqam Makkah", "Bilingual feed", "hosp"], ["p24", "Raffles Makkah Palace", "Bilingual feed", "hosp"], ["p25", "Makkah Clock Royal Tower, A Fairmont Hotel", "Bilingual feed", "hosp"], ["p26", "TIME Rako Hotel, Qatar", "“Stay close”", "hosp"], ["p35", "TIME Grand Plaza Dubai", "Drinks: “Taste joy in every sip”", "hosp"], ["p36", "TIME Grand Plaza Dubai", "Meetings and pool", "hosp"], ["p38", "TIME Asma Hotel", "Fitness and dining", "hosp"], ["p39", "TIME Asma Hotel", "Dolce Vita: 2-for-1 pizza", "hosp"], ["p40", "TIME Hotels", "Breast cancer awareness post", "hosp"], ["p29", "DS Rent KSA", "Car rental · “We’re with you all the time!”", "auto"], ["p30", "DS Rent KSA", "“Always with you”", "auto"], ["p32", "Haier Gulf", "Appliances · social feed", "auto"], ["p33", "Haier Gulf", "“Less energy. More saving.”", "auto"]];
+const drawArc=f=>{document.getElementById("arcg").innerHTML=ARC.filter(a=>f==="all"||a[3]===f).map(a=>`<a href="arc/${a[0]}.jpg" target="_blank" rel="noopener"><img loading="lazy" src="arc/${a[0]}.jpg" alt="${a[1]}: ${a[2]}"><div><b>${a[1]}</b><span>${a[2]}</span></div></a>`).join("")};drawArc("all");
+document.querySelectorAll("#arcf button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#arcf button").forEach(x=>x.classList.toggle("on",x===b));drawArc(b.dataset.f)});
+const names=["Sofitel","Fairmont","Raffles","Swissôtel","Mövenpick","Pullman Zamzam","Novotel","Mercure","ibis","Adagio","DoubleTree by Hilton","Dar Al Taqwa","Le Méridien","Radisson","TIME Hotels","Novartis","Keytruda","Lundbeck","Cipralex","Hawks MC Dubai","NewBridge","Nusuk","Uber","Spotify","Air Arabia","Jarir Bookstore","Pantene","Johnson’s","Iram Jewelry","GSpa Four Seasons","World Food Programme","Galaxy","Haier Gulf","Sharjah Department of Culture"];
+document.getElementById("names").innerHTML=names.map(n=>`<span>${n}</span>`).join("");
+
+const time=[
+ ["Jun 2025 – now","Content Team Lead, NTAM Egypt","Leads the creative content team; wrote the department workflow and standards"],
+ ["2024 – 2025","Senior Content Creator, NTAM Alexandria","Concepts, calendars, scripts, visuals and shoots for Accor and Hilton hotels in Egypt and Saudi Arabia, plus NTAM Health"],
+ ["2024","Advertising, marketing and sales, Al Serh Media, Dubai, UAE","Ad sales, marketing proposals and client campaigns"],
+ ["2022 – 2023","Senior Creative Content Creator, NTAM UAE","Hospitality content across Makkah, Sharjah, Dubai and Qatar"],
+ ["2021 – 2023","Content creator for influencer Logina Salah","Filmed, shot, edited and captioned brand deals: Pantene, Johnson’s, Galaxy, Iram Jewelry, GSpa Four Seasons"],
+ ["2021 – 2023","Content Creator, Arab Academy for Science and Technology",""],
+ ["2021 – 2022","Creative Editor and Writer, EpicBeat Magazine",""],
+ ["Earlier","Content creator and campaign manager","Campaign manager for Bebasata Show; content creator for Trust Group and Majoueur Jewelry"],
+ ["2017 – now","Freelance voice-over artist and campaign manager","Arabic and English voice-over, including Cipralex in Dubai"]
+];
+document.getElementById("time").innerHTML=time.map(t=>`<li><span class="yr">${t[0]}</span><div><b>${t[1]}</b>${t[2]?`<span>${t[2]}</span>`:""}</div></li>`).join("");
+}
+</script>
+<script src="doc2/hls.light.min.js"></script>
+<script>{const v=document.getElementById("wpdoc");if(v){const src=v.dataset.src;let ready=false;const go=()=>{if(ready)return;ready=true;if(window.Hls&&Hls.isSupported()){const h=new Hls();h.loadSource(src);h.attachMedia(v)}else{v.src=src}};v.addEventListener("play",()=>{if(!v.currentSrc){go();setTimeout(()=>v.play().catch(()=>{}),300)}},{once:false});v.addEventListener("click",go,{once:true});const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){go();io.disconnect()}},{rootMargin:"400px"});io.observe(v)}}</script>
+</body>
+</html>
