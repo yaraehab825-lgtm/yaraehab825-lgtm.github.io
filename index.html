@@ -543,6 +543,7 @@ nav{background:color-mix(in srgb,var(--bg) 92%,transparent)}
 .brands2 .bt a:hover,.brands2 .bt a:focus-visible{text-decoration:underline;text-underline-offset:3px}
 .brands2 .bt b a::after{content:" ↗";font-weight:400;font-size:12px;opacity:.6}
 .brands2 .bt ul a::after{content:" ↗";font-size:11px;opacity:.6}
+.dvst{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}.dvst img{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:10px}
 </style>
 </head>
 <body>
@@ -939,7 +940,7 @@ nav{background:color-mix(in srgb,var(--bg) 92%,transparent)}
 </section>
 
 <section class="chapter" id="ch-film" data-label="Film">
-  <div class="wrap chw"><span class="chn">04</span><div><h2>Film</h2><p class="intro">An award-winning short, a global documentary, scripts, storyboards and shoots.</p><ul class="chl"><li><a href="#film">Fallacy and the documentary</a></li></ul></div></div>
+  <div class="wrap chw"><span class="chn">04</span><div><h2>Film</h2><p class="intro">An award-winning short, a global documentary, scripts, storyboards and shoots.</p><ul class="chl"><li><a href="#film">Fallacy and the documentary</a></li><li><a href="#divers">Diver’s Grave</a></li></ul></div></div>
 </section>
 
 <section class="band dark" id="film" data-label="Film">
@@ -982,6 +983,19 @@ nav{background:color-mix(in srgb,var(--bg) 92%,transparent)}
         <dt>My role</dt><dd>Concept, full script and narration, shooting list, storyboard, and directing on set</dd>
         <dt>Cut-downs</dt><dd>Instagram episodes built around single characters</dd>
       </dl>
+    </div>
+  </div>
+  <div class="wrap case" id="divers" style="margin-top:64px">
+    <div class="media">
+      <div class="docv"><video id="dvdoc" poster="img/divers-poster.jpg" controls playsinline preload="none" data-src="doc3/playlist.txt"></video><span class="doct">Diver’s Grave · documentary · 7 min</span></div>
+      <div class="dvst"><img src="img/divers-300.jpg" alt="Diver in red-lit water with a camcorder timestamp from 2000" loading="lazy"><img src="img/divers-360.jpg" alt="Light beams falling into an underwater cave" loading="lazy"></div>
+    </div>
+    <div>
+      <p class="kicker">Documentary · Dahab, Red Sea · 2021</p>
+      <h2>Diver’s Grave</h2>
+      <p>A documentary about Dahab’s Blue Hole, the dive site known as the divers’ cemetery, and the people who keep going back to it: why the sea pulls them deeper, and what it takes from them.</p>
+      <dl class="slate"><dt>My role</dt><dd>Arabic voice-over, filming and editing</dd><dt>Made with</dt><dd>Premiere Pro</dd><dt>Made at</dt><dd>College of Language and Communication, Arab Academy for Science and Technology</dd></dl>
+      <p><a href="https://www.behance.net/gallery/122581285/Divers-grave-documentary-Voiceover-(Arabic)-filming" target="_blank" rel="noopener">See it on Behance ↗</a></p>
     </div>
   </div>
   <div class="wrap">
@@ -1279,5 +1293,6 @@ document.getElementById("time").innerHTML=time.map(t=>`<li><span class="yr">${t[
 <script src="doc2/hls.light.min.js"></script>
 <script>{const v=document.getElementById("wpdoc");if(v){const src=v.dataset.src;let ready=false;const go=()=>{if(ready)return;ready=true;if(window.Hls&&Hls.isSupported()){const h=new Hls();h.loadSource(src);h.attachMedia(v)}else{v.src=src}};v.addEventListener("play",()=>{if(!v.currentSrc){go();setTimeout(()=>v.play().catch(()=>{}),300)}},{once:false});v.addEventListener("click",go,{once:true});const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){go();io.disconnect()}},{rootMargin:"400px"});io.observe(v)}}</script>
 <script>{const add=(id,n)=>{const g=document.getElementById(id);if(!g||g.children.length<=n)return;g.classList.add('clip');const b=document.createElement('button');b.className='more';b.type='button';b.textContent='Show all '+g.children.length;b.onclick=()=>{g.classList.remove('clip');b.remove()};g.after(b);if(id==='arcg')document.querySelectorAll('#archive .chips button').forEach(c=>c.addEventListener('click',()=>{g.classList.remove('clip');b.remove()}))};setTimeout(()=>{add('bestg',8);add('arcg',8)},0)}</script>
+<script>{const v=document.getElementById("dvdoc");if(v){const src=v.dataset.src;let ready=false;const go=()=>{if(ready)return;ready=true;if(window.Hls&&Hls.isSupported()){const h=new Hls();h.loadSource(src);h.attachMedia(v)}else{v.src=src}};v.addEventListener("play",()=>{if(!v.currentSrc){go();setTimeout(()=>v.play().catch(()=>{}),300)}});v.addEventListener("click",go,{once:true});const io=new IntersectionObserver(e=>{if(e[0].isIntersecting){go();io.disconnect()}},{rootMargin:"400px"});io.observe(v)}}</script>
 </body>
 </html>
